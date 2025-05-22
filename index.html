@@ -3,259 +3,1619 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IKH Groups</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    <title>IKH Groups - Building Excellence Across Industries</title>
+    <meta
+      name="description"
+      content="Delivering Quality Construction Solutions Since Inception"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Reset and base styles */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+        line-height: 1.5;
+        background-color: #fff;
+        min-height: 100vh;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* Layout */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      /* Header */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        z-index: 50;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .site-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-image {
+        height: 60px; /* Increased from 48px to 60px */
+        width: auto;
+      }
+
+      .search-button {
+        border-radius: 999px;
+        padding: 12px; /* Increased from 8px to 12px */
+        color: #374151;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .search-button i {
+        font-size: 20px; /* Added to make the icon larger */
+      }
+
+      .search-button:hover {
+        background-color: #cacbce;
+      }
+
+      .mobile-menu-button {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 12px; /* Increased from 8px to 12px to match search button */
+      }
+
+      .mobile-menu-button i {
+        font-size: 20px; /* Added to make the icon larger */
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 40;
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+
+      .mobile-nav-link {
+        display: block;
+        padding: 12px 16px;
+        color: #374151;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-nav-link:hover {
+        background-color: #fff7ed;
+        color: #f97316;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        height: calc(100vh - 80px);
+        width: 64px;
+        background-color: #fff;
+        z-index: 40;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: width 0.3s ease;
+      }
+
+      .sidebar:hover {
+        width: 192px;
+      }
+
+      .sidebar-nav {
+        margin-top: 16px;
+      }
+
+      .sidebar-nav ul {
+        padding: 8px;
+      }
+
+      .sidebar-nav li {
+        margin-bottom: 4px;
+      }
+
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 12px;
+        border-radius: 8px;
+        color: #374151;
+        transition: all 0.3s ease;
+      }
+
+      .sidebar-link:hover {
+        background-color: #fff7ed;
+        color: #f97316;
+      }
+
+      .sidebar-link i {
+        font-size: 20px;
+        min-width: 20px;
+      }
+
+      .sidebar-link span {
+        margin-left: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .sidebar:hover .sidebar-link span {
+        opacity: 1;
+      }
+
+      .sidebar-cta {
+        position: absolute;
+        bottom: 24px;
+        left: 0;
+        right: 0;
+        padding: 0 12px;
+      }
+
+      .sidebar-cta a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        background-color: #f97316;
+        color: #fff;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .sidebar-cta a:hover {
+        background-color: #ea580c;
+      }
+
+      .sidebar-cta i {
+        font-size: 20px;
+        min-width: 20px;
+        display: block !important; /* Force display of the icon */
+        opacity: 1 !important; /* Ensure the icon is visible */
+      }
+
+      .sidebar-cta span {
+        margin-left: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .sidebar:hover .sidebar-cta span {
+        opacity: 1;
+      }
+
+      /* Main Content */
+      .main-content {
+        min-height: 100vh;
+        background-color: #fff;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        padding-top: 80px;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+
+      #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 768px;
+        padding-left: 64px;
+      }
+
+      .hero-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.25;
+        margin-bottom: 8px;
+      }
+
+      .hero-subtitle {
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 16px;
+      }
+
+      .hero-text {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 32px;
+      }
+
+      /* Buttons */
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        font-weight: 500;
+        border-radius: 9999px;
+        transition: all 0.3s ease;
+      }
+
+      .button-primary {
+        background-color: #f97316;
+        color: #fff;
+      }
+
+      .button-primary:hover {
+        background-color: #ea580c;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .button-outline {
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+      }
+
+      .button-outline:hover {
+        background-color: #fff;
+        color: #f97316;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Divisions Section */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 16px;
+      }
+
+      .section-title p {
+        font-size: 18px;
+        color: #4b5563;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .service-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background-color: #f97316;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .service-icon i {
+        font-size: 32px;
+      }
+
+      .service-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #111827;
+      }
+
+      .service-card p {
+        color: #4b5563;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .service-link {
+        color: #f97316;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      .service-link i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+
+      .service-link:hover {
+        color: #ea580c;
+      }
+
+      .service-link:hover i {
+        transform: translateX(5px);
+      }
+
+      /* Stats Section */
+      .bg-orange-light {
+        background-color: #fff7ed;
+      }
+
+      .stats-section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .stats-section-title h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .stats-section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #f97316;
+      }
+
+      .stats-section-title p {
+        font-size: 18px;
+        color: #4b5563;
+        max-width: 600px;
+        margin: 15px auto 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 1fr;
+      }
+
+      .stat-card {
+        padding: 30px 20px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background-color: #ffedd5;
+      }
+
+      .stat-icon i {
+        font-size: 30px;
+        color: #f97316;
+      }
+
+      .stat-value {
+        margin-bottom: 10px;
+        font-size: 40px;
+        font-weight: 700;
+        color: #f97316;
+      }
+
+      .stat-label {
+        color: #4b5563;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-image {
+        height: 256px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.1);
+      }
+
+      .project-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .project-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 24px;
+      }
+
+      .project-title {
+        margin-bottom: 4px;
+        font-size: 25px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .project-location {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .button-container {
+        margin-top: 48px;
+        text-align: center;
+      }
+
+      /* Gallery Section */
+      .bg-gray-light {
+        background-color: #f9fafb;
+      }
+
+      .gallery-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-image {
+        height: 256px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover .gallery-image {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-caption {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      /* Client Slider */
+      .client-slider {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .client-track {
+        display: flex;
+        gap: 32px;
+        animation: marquee 30s linear infinite;
+      }
+
+      .client-item {
+        min-width: 200px;
+        height: 150px;
+        padding: 24px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+      }
+
+      .client-item:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .client-logo {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        position: relative;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("building_project.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 96px 0;
+      }
+
+      .testimonial-card {
+        position: relative;
+        padding: 32px 48px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        max-width: 768px;
+        margin: 0 auto;
+      }
+
+      .testimonial-quote {
+        position: absolute;
+        top: -24px;
+        left: 32px;
+        font-size: 48px;
+        color: #f97316;
+      }
+
+      .testimonial-text {
+        margin-bottom: 32px;
+        font-size: 20px;
+        font-style: italic;
+        color: #4b5563;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .testimonial-avatar {
+        width: 48px;
+        height: 48px;
+        margin-right: 16px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .testimonial-name {
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .testimonial-position {
+        font-size: 14px;
+        color: #6b7280;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background-color: #f97316;
+        padding: 80px 0;
+      }
+
+      .cta-content {
+        max-width: 768px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .cta-title {
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 24px;
+      }
+
+      .cta-text {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 32px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: #111827;
+        color: #fff;
+        padding-top: 64px;
+      }
+
+      .footer-logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 48px;
+      }
+
+      .footer-logo {
+        height: 80px;
+        width: auto;
+      }
+
+      .footer-grid {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 1fr;
+      }
+
+      .footer-heading {
+        margin-bottom: 24px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .footer-text {
+        margin-bottom: 24px;
+        color: #9ca3af;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 16px;
+      }
+
+      .footer-social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #1f2937;
+        color: #f97316;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social-link:hover {
+        background-color: #f97316;
+        color: #fff;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-link {
+        color: #9ca3af;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #f97316;
+      }
+
+      .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      .footer-contact-icon {
+        margin-right: 12px;
+        color: #f97316;
+      }
+
+      .footer-contact-text {
+        color: #9ca3af;
+      }
+
+      .footer-bottom {
+        margin-top: 48px;
+        padding: 32px 0;
+        text-align: center;
+        border-top: 1px solid #1f2937;
+      }
+
+      .footer-copyright {
+        font-size: 14px;
+        color: #6b7280;
+      }
+
+      /* WhatsApp Button */
+      .whatsapp-button {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        background-color: #22c55e;
+        color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-button:hover {
+        transform: scale(1.1);
+        background-color: #16a34a;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive */
+      @media (min-width: 640px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero-title {
+          font-size: 48px;
+        }
+
+        .hero-subtitle {
+          font-size: 36px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          padding-left: 80px;
+        }
+
+        .services {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cta-buttons {
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        .hero-title {
+          font-size: 60px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .services {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .projects-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .mobile-menu-button {
+          display: block;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .container {
+          padding-left: 20px;
+        }
+
+        .hero-content {
+          padding-left: 20px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a href="#" class="logo"><i class="fas fa-building"></i>IKH Groups</a>
-
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#services">Divisions</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a href="#contact" class="contact-btn">Get Quote</a>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <video autoplay muted loop class="hero-bg">
-        <source src="hero_video.mp4" type="video/mp4" />
-      </video>
-      <div class="hero-content">
-        <h1>Building Excellence Across Industries</h1>
-        <p>Delivering Quality Construction Solutions Since Inception</p>
-        <div class="hero-btns">
-          <a href="#contact" class="btn btn-primary">Get Free Quote</a>
-          <a href="#projects" class="btn btn-secondary">View Projects</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section" id="services">
-      <div class="section-title">
-        <h2>Our Divisions</h2>
-        <p>Comprehensive Services Across Multiple Sectors</p>
-      </div>
-      <div class="services">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-industry"></i></div>
-          <h3>Construction</h3>
-          <p>
-            Specializing in industrial, commercial, and residential projects
-            with a focus on quality and safety.
-          </p>
-          <a href="#" class="service-link"
-            >Learn More <i class="fas fa-arrow-right"></i
-          ></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-cogs"></i></div>
-          <h3>Support Services</h3>
-          <p>
-            Providing essential support services to ensure seamless project
-            execution and maintenance.
-          </p>
-          <a href="#" class="service-link"
-            >Learn More <i class="fas fa-arrow-right"></i
-          ></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-snowflake"></i></div>
-          <h3>HVAC Services</h3>
-          <p>
-            Delivering efficient heating, ventilation, and air conditioning
-            solutions for diverse environments.
-          </p>
-          <a href="#" class="service-link"
-            >Learn More <i class="fas fa-arrow-right"></i
-          ></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-      <div class="section-title">
-        <h2>Our Projects</h2>
-        <p>Showcasing Our Commitment to Excellence</p>
-      </div>
-      <div class="project-grid">
-        <div class="project-card">
-          <img
-            src="industry_project.webp"
-            alt="Industrial Plant"
-            class="project-img"
-          />
-          <div class="project-overlay">
-            <h3>Industrial Plant</h3>
-            <p>Saudi Arabia</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            src="commercial_project.jpg"
-            alt="Commercial Complex"
-            class="project-img"
-          />
-          <div class="project-overlay">
-            <h3>Commercial Complex</h3>
-            <p>Saudi Arabia</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img
-            src="building_project.jpg"
-            alt="Residential Building"
-            class="project-img"
-          />
-          <div class="project-overlay">
-            <h3>Residential Building</h3>
-            <p>Saudi Arabia</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-      <div class="section-title">
-        <h2>Client Testimonials</h2>
-        <p>What our clients say about working with us.</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="quote">
-            "IKH Groups delivered our corporate headquarters ahead of schedule
-            while maintaining exceptional quality standards."
-          </p>
-          <div class="author">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="#" class="site-logo">
             <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="Client"
+              src="logo.webp"
+              alt="IKH Groups of Companies"
+              class="logo-image"
             />
-            <div class="author-info">
-              <h4>Ahmed Khan</h4>
-              <p>CEO, TechSolutions</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="quote">
-            "Their attention to detail and professional approach made our
-            residential project stress-free."
-          </p>
-          <div class="author">
-            <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="Client"
-            />
-            <div class="author-info">
-              <h4>Fatima Ahmed</h4>
-              <p>Homeowner</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="quote">
-            "Reliable, efficient, and transparent - IKH Groups is our go-to
-            construction partner."
-          </p>
-          <div class="author">
-            <img
-              src="https://randomuser.me/api/portraits/men/75.jpg"
-              alt="Client"
-            />
-            <div class="author-info">
-              <h4>Usman Malik</h4>
-              <p>Director, RealEstate Co.</p>
-            </div>
-          </div>
+          </a>
+
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+
+          <button class="mobile-menu-button" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-      <h2>Ready to Start Your Project?</h2>
-      <p>
-        Contact IKH Groups today for a consultation and discover how we can
-        bring your vision to life.
-      </p>
-      <a href="tel:+966133440244" class="cta-btn">Call Now: +966 13 344 0244</a>
-    </section>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#jv-works" class="mobile-nav-link">JV & Works</a></li>
+        <li><a href="#divisions" class="mobile-nav-link">Divisions</a></li>
+        <li><a href="#policies" class="mobile-nav-link">Policies</a></li>
+        <li><a href="#resources" class="mobile-nav-link">Resources</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <div class="footer-about">
-          <a href="#" class="footer-logo"
-            ><i class="fas fa-building"></i>IKH Groups</a
-          >
-          <p>
-            Committed to delivering high-quality construction projects with
-            integrity and professionalism.
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link"
-              ><i class="fab fa-facebook-f"></i
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#" class="sidebar-link">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="sidebar-link">
+              <i class="fas fa-info-circle"></i>
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#divisions" class="sidebar-link">
+              <i class="fas fa-th-large"></i>
+              <span>Divisions</span>
+            </a>
+          </li>
+          <li>
+            <a href="#jv-works" class="sidebar-link">
+              <i class="fas fa-briefcase"></i>
+              <span>JV & Works</span>
+            </a>
+          </li>
+          <li>
+            <a href="#policies" class="sidebar-link">
+              <i class="fas fa-file-alt"></i>
+              <span>Policies</span>
+            </a>
+          </li>
+          <li>
+            <a href="#resources" class="sidebar-link">
+              <i class="fas fa-building"></i>
+              <span>Resources</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="sidebar-link">
+              <i class="fas fa-phone"></i>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-cta">
+        <a href="#contact">
+          <i class="fas fa-phone" style="display: inline-block !important;"></i>
+          <span>Get Quote</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-overlay">
+          <div class="hero-background">
+            <video id="background-video" autoplay loop muted playsinline>
+              <source src="hero_video.mp4" type="video/mp4" />
+              <!-- Fallback image if video doesn't load -->
+              <img src="commercial_project.jpg" alt="Hero Background" />
+            </video>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">WELCOME TO IKH GROUPS</h1>
+            <h2 class="hero-subtitle">Asian Star General Contracting</h2>
+            <p class="hero-text">IKH General construction CO.</p>
+            <a href="#about" class="button button-primary"> Read More </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divisions Section -->
+      <section class="section" id="services">
+        <div class="section-title">
+          <h2>Our Divisions</h2>
+          <p>Comprehensive Services Across Multiple Sectors</p>
+        </div>
+        <div class="services">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-industry"></i></div>
+            <h3>Construction</h3>
+            <p>
+              Specializing in industrial, commercial, and residential projects
+              with a focus on quality and safety.
+            </p>
+            <a href="#" class="service-link"
+              >Learn More <i class="fas fa-arrow-right"></i
             ></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"
-              ><i class="fab fa-linkedin-in"></i
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-cogs"></i></div>
+            <h3>Support Services</h3>
+            <p>
+              Providing essential support services to ensure seamless project
+              execution and maintenance.
+            </p>
+            <a href="#" class="service-link"
+              >Learn More <i class="fas fa-arrow-right"></i
             ></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+            <h3>HVAC Services</h3>
+            <p>
+              Delivering efficient heating, ventilation, and air conditioning
+              solutions for diverse environments.
+            </p>
+            <a href="#" class="service-link"
+              >Learn More <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-desktop"></i></div>
+            <h3>IT Solutions</h3>
+            <p>
+              Implementing cutting-edge technology solutions to optimize operations
+              and enhance digital infrastructure.
+            </p>
+            <a href="#" class="service-link"
+              >Learn More <i class="fas fa-arrow-right"></i
+            ></a>
           </div>
         </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#services">Divisions</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3>Divisions</h3>
-          <ul>
-            <li><a href="#">Construction</a></li>
-            <li><a href="#">Support Services</a></li>
-            <li><a href="#">HVAC Services</a></li>
-            <li><a href="#">IT Solutions</a></li>
-            <li><a href="#">Operations</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h3>Contact Us</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Saudi Arabia</p>
-          <p><i class="fas fa-phone"></i> +966 13 344 0244</p>
-          <p><i class="fas fa-envelope"></i> info@ikhgroups.com</p>
-          <p><i class="fas fa-clock"></i> Sun-Thu: 9:00 AM - 6:00 PM</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 IKH Groups. All Rights Reserved.</p>
-      </div>
-    </footer>
+      </section>
 
-    <!-- WhatsApp Hover Button -->
-    <a href="https://wa.me/966133440244" class="whatsapp-float" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+      <!-- Stats Section -->
+      <section id="stats" class="section bg-orange-light">
+        <div class="container">
+          <div class="stats-section-title">
+            <h2>Our Achievements</h2>
+            <p>Numbers that speak for our commitment to excellence</p>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="stat-value">150+</div>
+              <p class="stat-label">Projects Completed</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-value">500+</div>
+              <p class="stat-label">Satisfied Clients</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <div class="stat-value">25</div>
+              <p class="stat-label">Years Experience</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="stat-value">99%</div>
+              <p class="stat-label">On-time Delivery</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Our Projects</h2>
+            <p class="section-description">
+              Showcasing Our Commitment to Excellence
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <div class="project-card">
+              <img
+                src="industry_project.webp"
+                alt="Industrial Plant"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <div class="project-content">
+                  <h3 class="project-title">Industrial Plant</h3>
+                  <p class="project-location">Saudi Arabia</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="commercial_project.jpg"
+                alt="Commercial Complex"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <div class="project-content">
+                  <h3 class="project-title">Commercial Complex</h3>
+                  <p class="project-location">Saudi Arabia</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="building_project.jpg"
+                alt="Residential Building"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <div class="project-content">
+                  <h3 class="project-title">Residential Building</h3>
+                  <p class="project-location">Saudi Arabia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <a href="#" class="button button-primary">View All Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="section bg-gray-light">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Project Gallery</h2>
+            <p class="section-description">
+              Explore our portfolio of completed and ongoing projects
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="industry_project.webp"
+                alt="Construction site with cranes"
+                class="gallery-image"
+              />
+              <div class="gallery-overlay">
+                <p class="gallery-caption">Modern Construction Site</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="building_project.jpg"
+                alt="Office building exterior"
+                class="gallery-image"
+              />
+              <div class="gallery-overlay">
+                <p class="gallery-caption">Commercial Office Complex</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="commercial_project.jpg"
+                alt="Residential apartments"
+                class="gallery-image"
+              />
+              <div class="gallery-overlay">
+                <p class="gallery-caption">Luxury Residential Project</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="industry_project.webp"
+                alt="Interior design"
+                class="gallery-image"
+              />
+              <div class="gallery-overlay">
+                <p class="gallery-caption">Interior Finishing Work</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="building_project.jpg"
+                alt="HVAC installation"
+                class="gallery-image"
+              />
+              <div class="gallery-overlay">
+                <p class="gallery-caption">HVAC System Installation</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="commercial_project.jpg"
+                alt="Construction team"
+                class="gallery-image"
+              />
+              <div class="gallery-overlay">
+                <p class="gallery-caption">Our Expert Team at Work</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Client Slider -->
+      <section class="section">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Our Clients</h2>
+            <p class="section-description">
+              Trusted by leading companies across industries
+            </p>
+          </div>
+
+          <div class="client-slider">
+            <div class="client-track">
+              <div class="client-item">
+                <img
+                  src="client_1.jpg"
+                  alt="Tech Solutions"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://www.iploca.com/app/uploads/2021/10/BonattiLogo_trasp-lbox-320x160-FFFFFF.png"
+                  alt="Construction Co"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWFf1HA9pjjt8UX86nQxrFgOiIAXu5zchQA&s"
+                  alt="Global Industries"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhxT88xdW2L6aluuOTj3aNAajTFN4eBNs0A&s"
+                  alt="Modern Builders"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/072018/petron_logo_1.jpg?oBaiUiETN2tHrwavAZNvke.LpB1Euhzi&itok=Kdz1PbLD"
+                  alt="Elite Developers"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhxT88xdW2L6aluuOTj3aNAajTFN4eBNs0A&s"
+                  alt="Prime Properties"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="client_1.jpg"
+                  alt="Innovative Designs"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWFf1HA9pjjt8UX86nQxrFgOiIAXu5zchQA&s"
+                  alt="Master Architects"
+                  class="client-logo"
+                />
+              </div>
+              <!-- Duplicate for continuous scrolling -->
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Tech Solutions"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Construction Co"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Global Industries"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Modern Builders"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Elite Developers"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Prime Properties"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Innovative Designs"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://placehold.co/200x100"
+                  alt="Master Architects"
+                  class="client-logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section id="contact" class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2 class="cta-title">Ready to Start Your Project?</h2>
+            <p class="cta-text">
+              Contact IKH Groups today for a consultation and discover how we
+              can bring your vision to life.
+            </p>
+            <div class="cta-buttons">
+              <a
+                href="tel:+966133440244"
+                class="button"
+                style="background-color: white; color: #f97316"
+              >
+                Call Now: +966 13 344 0244
+              </a>
+              <a href="#" class="button button-outline"> Request a Quote </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-logo-container">
+            <img
+              src="logo.webp"
+              alt="IKH Groups of Companies"
+              class="footer-logo"
+            />
+          </div>
+
+          <div class="footer-grid">
+            <div>
+              <h3 class="footer-heading">About Us</h3>
+              <p class="footer-text">
+                IKH Groups of Companies, a subsidiary of IKH Groups of
+                Companies, is committed to delivering high-quality construction
+                projects with integrity and professionalism.
+              </p>
+              <div class="footer-social">
+                <a href="#" class="footer-social-link">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="footer-social-link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="footer-social-link">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="footer-social-link">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="footer-heading">Quick Links</h3>
+              <ul class="footer-links">
+                <li><a href="#" class="footer-link">Home</a></li>
+                <li><a href="#about" class="footer-link">About</a></li>
+                <li><a href="#jv-works" class="footer-link">JV & Works</a></li>
+                <li><a href="#divisions" class="footer-link">Divisions</a></li>
+                <li><a href="#policies" class="footer-link">Policies</a></li>
+                <li><a href="#resources" class="footer-link">Resources</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="footer-heading">Divisions</h3>
+              <ul class="footer-links">
+                <li>
+                  <a href="#construction" class="footer-link">Construction</a>
+                </li>
+                <li>
+                  <a href="#support-services" class="footer-link"
+                    >Support Services</a
+                  >
+                </li>
+                <li>
+                  <a href="#hvac-services" class="footer-link">HVAC Services</a>
+                </li>
+                <li>
+                  <a href="#it-solutions" class="footer-link">IT Solutions</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="footer-heading">Contact Us</h3>
+              <ul>
+                <li class="footer-contact-item">
+                  <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                  <span class="footer-contact-text">Saudi Arabia</span>
+                </li>
+                <li class="footer-contact-item">
+                  <i class="fas fa-phone footer-contact-icon"></i>
+                  <span class="footer-contact-text">+966 13 344 0244</span>
+                </li>
+                <li class="footer-contact-item">
+                  <i class="fas fa-envelope footer-contact-icon"></i>
+                  <span class="footer-contact-text">info@ikhgroups.com</span>
+                </li>
+                <li class="footer-contact-item">
+                  <i class="fas fa-clock footer-contact-icon"></i>
+                  <span class="footer-contact-text"
+                    >Sun-Thu: 9:00 AM - 6:00 PM</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p class="footer-copyright">
+              &copy; 2025 IKH Groups. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- WhatsApp Button -->
+      <a
+        href="https://wa.me/966133440244"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-button"
+      >
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </a>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      function toggleMobileMenu() {
+        var menu = document.getElementById('mobileMenu');
+        if (menu.classList.contains('active')) {
+          menu.classList.remove('active');
+        } else {
+          menu.classList.add('active');
+        }
+      }
+    </script>
   </body>
 </html>
