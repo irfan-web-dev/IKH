@@ -14,7 +14,9 @@
     />
     <style>
       /* Reset and base styles */
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -86,13 +88,13 @@
       }
 
       .logo-image {
-        height: 60px; /* Increased from 48px to 60px */
+        height: 60px;
         width: auto;
       }
 
       .search-button {
         border-radius: 999px;
-        padding: 12px; /* Increased from 8px to 12px */
+        padding: 12px;
         color: #374151;
         background: none;
         border: none;
@@ -100,7 +102,7 @@
       }
 
       .search-button i {
-        font-size: 20px; /* Added to make the icon larger */
+        font-size: 20px;
       }
 
       .search-button:hover {
@@ -112,11 +114,11 @@
         background: none;
         border: none;
         cursor: pointer;
-        padding: 12px; /* Increased from 8px to 12px to match search button */
+        padding: 12px;
       }
 
       .mobile-menu-button i {
-        font-size: 20px; /* Added to make the icon larger */
+        font-size: 20px;
       }
 
       /* Mobile Menu */
@@ -130,6 +132,8 @@
         padding: 16px;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         z-index: 40;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
       }
 
       .mobile-menu.active {
@@ -137,7 +141,8 @@
       }
 
       .mobile-nav-link {
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 12px 16px;
         color: #374151;
         border-radius: 6px;
@@ -147,6 +152,36 @@
       .mobile-nav-link:hover {
         background-color: #fff7ed;
         color: #f97316;
+      }
+
+      /* Mobile Dropdown Styles */
+      .mobile-dropdown {
+        position: relative;
+      }
+
+      .mobile-dropdown-arrow {
+        margin-left: auto;
+        transition: transform 0.3s ease;
+        font-size: 12px;
+      }
+
+      .mobile-dropdown.active .mobile-dropdown-arrow {
+        transform: rotate(180deg);
+      }
+
+      .mobile-dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 20px;
+      }
+
+      .mobile-dropdown.active .mobile-dropdown-menu {
+        max-height: 1000px;
+      }
+
+      .mobile-dropdown-menu .mobile-nav-link {
+        padding-left: 30px;
       }
 
       /* Sidebar */
@@ -178,9 +213,128 @@
         margin-bottom: 4px;
       }
 
+      @media (min-width: 768px) {
+        .mobile-menu {
+          display: none !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .mobile-menu-button {
+          display: block;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .container {
+          padding-left: 20px;
+        }
+
+        .hero-content {
+          padding-left: 20px;
+        }
+
+        /* Mobile menu specific styles */
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 80px;
+          left: 0;
+          right: 0;
+          background-color: #fff;
+          padding: 16px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          z-index: 40;
+          max-height: calc(100vh - 80px);
+          overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+          display: block;
+        }
+
+        .mobile-nav-link {
+          display: flex;
+          align-items: center;
+          padding: 12px 16px;
+          color: #374151;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+          background-color: #fff7ed;
+          color: #f97316;
+        }
+      }
+
+      /* Sidebar Dropdown Styles */
+      .has-dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        width: 200px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 8px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 100;
+      }
+
+      .has-dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .dropdown-menu li {
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 8px 16px;
+        color: #374151;
+        transition: all 0.3s ease;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: #fff7ed;
+        color: #f97316;
+        padding-left: 20px;
+      }
+
+      .dropdown-arrow {
+        display: none;
+        margin-left: auto;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar:hover .dropdown-arrow {
+        display: block;
+      }
+
+      .has-dropdown:hover .dropdown-arrow {
+        transform: rotate(90deg);
+      }
+
+      .sidebar:hover .sidebar-link {
+        padding-right: 8px;
+      }
+
       .sidebar-link {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         height: 40px;
         padding: 0 12px;
         border-radius: 8px;
@@ -237,8 +391,8 @@
       .sidebar-cta i {
         font-size: 20px;
         min-width: 20px;
-        display: block !important; /* Force display of the icon */
-        opacity: 1 !important; /* Ensure the icon is visible */
+        display: block !important;
+        opacity: 1 !important;
       }
 
       .sidebar-cta span {
@@ -474,7 +628,7 @@
       }
 
       .stats-section-title h2::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 50%;
@@ -1012,7 +1166,11 @@
             <i class="fas fa-search"></i>
           </button>
 
-          <button class="mobile-menu-button" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+          <button
+            class="mobile-menu-button"
+            aria-label="Toggle mobile menu"
+            onclick="toggleMobileMenu()"
+          >
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -1022,13 +1180,91 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
-        <li><a href="#" class="mobile-nav-link">Home</a></li>
-        <li><a href="#about" class="mobile-nav-link">About</a></li>
-        <li><a href="#jv-works" class="mobile-nav-link">JV & Works</a></li>
-        <li><a href="#divisions" class="mobile-nav-link">Divisions</a></li>
-        <li><a href="#policies" class="mobile-nav-link">Policies</a></li>
-        <li><a href="#resources" class="mobile-nav-link">Resources</a></li>
-        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        <li class="mobile-dropdown">
+          <a href="#" class="mobile-nav-link">
+            <span>Home</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Home Option 1</a></li>
+            <li><a href="#" class="mobile-nav-link">Home Option 2</a></li>
+            <li><a href="#" class="mobile-nav-link">Home Option 3</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#about" class="mobile-nav-link">
+            <span>About</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">groups Chairman</a></li>
+            <li><a href="#" class="mobile-nav-link">President</a></li>
+            <li><a href="#" class="mobile-nav-link">general manager</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Staffs</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Mission</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Vision</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Objectives</a></li>
+            <li><a href="#" class="mobile-nav-link">Epilogue</a></li>
+            <li><a href="#" class="mobile-nav-link">Careers</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#jv-works" class="mobile-nav-link">
+            <span>JV & Works</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Joint Ventures</a></li>
+            <li><a href="#" class="mobile-nav-link">Works</a></li>
+            <li><a href="#" class="mobile-nav-link">Completed Projects</a></li>
+            <li><a href="#" class="mobile-nav-link">Ongoing Projects</a></li>
+            <li><a href="#" class="mobile-nav-link">Clients</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#divisions" class="mobile-nav-link">
+            <span>Divisions</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Constructions</a></li>
+            <li><a href="#" class="mobile-nav-link">IT Solutions</a></li>
+            <li><a href="#" class="mobile-nav-link">HVAC Services</a></li>
+            <li><a href="#" class="mobile-nav-link">Support Services</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#policies" class="mobile-nav-link">
+            <span>Policies</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Quality management</a></li>
+            <li><a href="#" class="mobile-nav-link">She management</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#resources" class="mobile-nav-link">
+            <span>Resources</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Manpower Resources</a></li>
+            <li><a href="#" class="mobile-nav-link">Equipment Resources</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#contact" class="mobile-nav-link">
+            <span>Contact</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Head Office</a></li>
+            <li><a href="#" class="mobile-nav-link">Project Sites</a></li>
+            <li><a href="#" class="mobile-nav-link">Careers</a></li>
+            <li><a href="#" class="mobile-nav-link">Feedback</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
 
@@ -1036,54 +1272,104 @@
     <div class="sidebar">
       <nav class="sidebar-nav">
         <ul>
-          <li>
+          <li class="has-dropdown">
             <a href="#" class="sidebar-link">
               <i class="fas fa-home"></i>
               <span>Home</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Home Option 1</a></li>
+              <li><a href="#">Home Option 2</a></li>
+              <li><a href="#">Home Option 3</a></li>
+            </ul>
           </li>
-          <li>
+          <li class="has-dropdown">
             <a href="#about" class="sidebar-link">
               <i class="fas fa-info-circle"></i>
               <span>About</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">groups Chairman</a></li>
+              <li><a href="#">President</a></li>
+              <li><a href="#">General manager</a></li>
+              <li><a href="#">Our Staffs</a></li>
+              <li><a href="#">Our Mission</a></li>
+              <li><a href="#">Our Vision</a></li>
+              <li><a href="#">Our Objectives</a></li>
+              <li><a href="#">Epilogue</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="#divisions" class="sidebar-link">
-              <i class="fas fa-th-large"></i>
-              <span>Divisions</span>
-            </a>
-          </li>
-          <li>
+          <li class="has-dropdown">
             <a href="#jv-works" class="sidebar-link">
               <i class="fas fa-briefcase"></i>
               <span>JV & Works</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Joint Ventures</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Completed Projects</a></li>
+              <li><a href="#">Ongoing Projects</a></li>
+              <li><a href="#">Clients</a></li>
+            </ul>
           </li>
-          <li>
+          <li class="has-dropdown">
+            <a href="#divisions" class="sidebar-link">
+              <i class="fas fa-th-large"></i>
+              <span>Divisions</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Constructions</a></li>
+              <li><a href="#">IT Solutions</a></li>
+              <li><a href="#">HVAC Services</a></li>
+              <li><a href="#">Support Services</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
             <a href="#policies" class="sidebar-link">
               <i class="fas fa-file-alt"></i>
               <span>Policies</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Quality management</a></li>
+              <li><a href="#">She management</a></li>
+            </ul>
           </li>
-          <li>
+          <li class="has-dropdown">
             <a href="#resources" class="sidebar-link">
               <i class="fas fa-building"></i>
               <span>Resources</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Manpower Resources</a></li>
+              <li><a href="#">Equipment Resources</a></li>
+            </ul>
           </li>
-          <li>
+          <li class="has-dropdown">
             <a href="#contact" class="sidebar-link">
               <i class="fas fa-phone"></i>
               <span>Contact</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Head Office</a></li>
+              <li><a href="#">Project Sites</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
           </li>
         </ul>
       </nav>
 
       <div class="sidebar-cta">
         <a href="#contact">
-          <i class="fas fa-phone" style="display: inline-block !important;"></i>
+          <i class="fas fa-phone" style="display: inline-block !important"></i>
           <span>Get Quote</span>
         </a>
       </div>
@@ -1157,8 +1443,8 @@
             <div class="service-icon"><i class="fas fa-desktop"></i></div>
             <h3>IT Solutions</h3>
             <p>
-              Implementing cutting-edge technology solutions to optimize operations
-              and enhance digital infrastructure.
+              Implementing cutting-edge technology solutions to optimize
+              operations and enhance digital infrastructure.
             </p>
             <a href="#" class="service-link"
               >Learn More <i class="fas fa-arrow-right"></i
@@ -1607,15 +1893,65 @@
 
     <!-- JavaScript -->
     <script>
-      // Mobile Menu Toggle
-      function toggleMobileMenu() {
-        var menu = document.getElementById('mobileMenu');
-        if (menu.classList.contains('active')) {
-          menu.classList.remove('active');
-        } else {
-          menu.classList.add('active');
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+          var menu = document.getElementById("mobileMenu");
+          menu.classList.toggle("active");
         }
-      }
+
+        // Mobile dropdown functionality
+        const mobileDropdowns = document.querySelectorAll(
+          ".mobile-dropdown > a"
+        );
+
+        mobileDropdowns.forEach((dropdown) => {
+          dropdown.addEventListener("click", function (e) {
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            parentLi.classList.toggle("active");
+
+            // Close other dropdowns when opening a new one
+            if (parentLi.classList.contains("active")) {
+              document.querySelectorAll(".mobile-dropdown").forEach((item) => {
+                if (item !== parentLi) {
+                  item.classList.remove("active");
+                }
+              });
+            }
+          });
+        });
+
+        // Assign the toggle function to your button
+        document
+          .querySelector(".mobile-menu-button")
+          .addEventListener("click", toggleMobileMenu);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", function (event) {
+          const mobileMenu = document.getElementById("mobileMenu");
+          const menuButton = document.querySelector(".mobile-menu-button");
+
+          // Check if click is outside mobile menu and button
+          if (
+            !mobileMenu.contains(event.target) &&
+            !menuButton.contains(event.target)
+          ) {
+            mobileMenu.classList.remove("active");
+          }
+        });
+
+        // Close mobile menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          const mobileMenu = document.getElementById("mobileMenu");
+          if (
+            window.innerWidth > 767 &&
+            mobileMenu.classList.contains("active")
+          ) {
+            mobileMenu.classList.remove("active");
+          }
+        });
+      });
     </script>
   </body>
 </html>
