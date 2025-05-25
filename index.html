@@ -9,15 +9,18 @@
       content="Delivering Quality Construction Solutions Since Inception"
     />
     <link rel="icon" type="image/x-icon" href="title_logo.jpeg" />
-        <link
+    <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-  /* Reset and base styles */
+      /* Reset and base styles */
       *,
       *::before,
       *::after {
@@ -48,7 +51,7 @@
       }
 
       body {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         color: var(--text-dark);
         line-height: 1.6;
         background-color: var(--white);
@@ -170,20 +173,45 @@
       }
 
       .search-button {
+        display: flex;
+        align-items: center;
         border-radius: 999px;
         padding: 12px;
         color: var(--text-dark);
         background: none;
         border: none;
         cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .search-button:hover {
+        background-color: var(--gray-medium);
       }
 
       .search-button i {
         font-size: 20px;
       }
 
-      .search-button:hover {
-        background-color: var(--gray-medium);
+      /* Input style (initially hidden) */
+      #search-input {
+        width: 0;
+        padding: 0;
+        opacity: 0;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        transition: all 0.3s ease;
+        background-color: #f1f1f1;
+        font-size: 14px;
+        margin-left: 8px;
+      }
+
+      /* Show input when active class added */
+      .search-button.active #search-input {
+        width: 150px;
+        padding: 6px 8px;
+        opacity: 1;
       }
 
       .mobile-menu-button {
@@ -411,7 +439,7 @@
       .sidebar-link {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         height: 40px;
         padding: 0 12px;
         border-radius: 8px;
@@ -466,10 +494,12 @@
       }
 
       .sidebar-cta i {
+        display: inline-block !important;
         font-size: 20px;
         min-width: 20px;
-        display: block !important;
+        display: block;
         opacity: 1 !important;
+        visibility: visible !important;
       }
 
       .sidebar-cta span {
@@ -504,7 +534,11 @@
         position: absolute;
         inset: 0;
         z-index: 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.4)
+        );
       }
 
       .hero-background {
@@ -611,7 +645,7 @@
       }
 
       .about-image::before {
-        content: '';
+        content: "";
         position: absolute;
         top: -20px;
         left: -20px;
@@ -623,7 +657,7 @@
       }
 
       .about-image::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -20px;
         right: -20px;
@@ -701,13 +735,13 @@
       }
 
       .services-section::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg');
+        background-image: url("https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg");
         background-size: cover;
         background-position: center;
         opacity: 0.3;
@@ -737,7 +771,7 @@
       }
 
       .section-title h2::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 50%;
@@ -763,11 +797,11 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-         z-index: 1;
+        z-index: 1;
       }
 
       .service-card::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -804,7 +838,7 @@
       .service-card:hover .service-icon {
         background-color: var(--primary);
         color: var(--white);
-          transform: rotateY(180deg);
+        transform: rotateY(180deg);
       }
 
       .service-icon i {
@@ -821,7 +855,7 @@
         font-weight: 700;
         margin-bottom: 15px;
         color: var(--text-dark);
-         transition: all 0.3s ease;
+        transition: all 0.3s ease;
       }
 
       .service-card:hover h3 {
@@ -845,7 +879,7 @@
       }
 
       .service-link::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -873,19 +907,23 @@
       }
 
       /* Stats Section */
-.stats-section {
+      .stats-section {
         background-color: var(--white);
         position: relative;
       }
 
       .stats-section::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, var(--primary-light) 0%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--primary-light) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
         opacity: 0.7;
         z-index: 0;
       }
@@ -910,7 +948,7 @@
       }
 
       .stat-card::before {
-        content: '';
+        content: "";
         position: absolute;
         top: -10px;
         right: -10px;
@@ -980,7 +1018,7 @@
       }
 
       /* Projects Section */
-     .projects-section {
+      .projects-section {
         background-color: var(--gray-light);
         position: relative;
       }
@@ -1141,13 +1179,13 @@
       }
 
       .clients-section::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg');
+        background-image: url("https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg");
         background-size: cover;
         background-position: center;
         opacity: 0.3;
@@ -1333,7 +1371,7 @@
       }
 
       .footer-heading::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -1422,7 +1460,7 @@
       }
 
       /* WhatsApp Button */
-       .whatsapp-button {
+      .whatsapp-button {
         position: fixed;
         bottom: 30px;
         right: 30px;
@@ -1449,7 +1487,7 @@
         box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.5);
       }
       /* Back to Top Button */
-       .back-to-top {
+      .back-to-top {
         position: fixed;
         bottom: 120px;
         right: 35px;
@@ -1480,7 +1518,7 @@
         transform: translateY(-5px);
       }
 
-       /* Animation Classes */
+      /* Animation Classes */
       .fade-in {
         animation: fadeIn 1s ease forwards;
       }
@@ -1502,7 +1540,7 @@
         .gallery-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-         .cta-buttons {
+        .cta-buttons {
           flex-direction: row;
           justify-content: center;
         }
@@ -1582,7 +1620,7 @@
           padding-left: 20px;
         }
 
-         .hero-title {
+        .hero-title {
           font-size: 40px;
         }
 
@@ -1617,7 +1655,7 @@
     </style>
   </head>
   <body>
-     <!-- Back to Top Button -->
+    <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop">
       <i class="fas fa-arrow-up"></i>
     </a>
@@ -1634,9 +1672,10 @@
             />
           </a>
 
-          <button class="search-button">
-            <i class="fas fa-search"></i>
-          </button>
+          <div class="search-button">
+            <i class="fas fa-search" id="search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search..." />
+          </div>
 
           <button
             class="mobile-menu-button"
@@ -1652,16 +1691,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
-        <li class="mobile-dropdown">
+        <li>
           <a href="#" class="mobile-nav-link">
             <span>Home</span>
-            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
           </a>
-          <ul class="mobile-dropdown-menu">
-            <li><a href="#" class="mobile-nav-link">Home Option 1</a></li>
-            <li><a href="#" class="mobile-nav-link">Home Option 2</a></li>
-            <li><a href="#" class="mobile-nav-link">Home Option 3</a></li>
-          </ul>
         </li>
         <li class="mobile-dropdown">
           <a href="#about" class="mobile-nav-link">
@@ -1725,17 +1758,10 @@
             <li><a href="#" class="mobile-nav-link">Equipment Resources</a></li>
           </ul>
         </li>
-        <li class="mobile-dropdown">
+        <li>
           <a href="#contact" class="mobile-nav-link">
             <span>Contact</span>
-            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
           </a>
-          <ul class="mobile-dropdown-menu">
-            <li><a href="#" class="mobile-nav-link">Head Office</a></li>
-            <li><a href="#" class="mobile-nav-link">Project Sites</a></li>
-            <li><a href="#" class="mobile-nav-link">Careers</a></li>
-            <li><a href="#" class="mobile-nav-link">Feedback</a></li>
-          </ul>
         </li>
       </ul>
     </div>
@@ -1744,17 +1770,11 @@
     <div class="sidebar">
       <nav class="sidebar-nav">
         <ul>
-          <li class="has-dropdown">
+          <li>
             <a href="#" class="sidebar-link">
               <i class="fas fa-home"></i>
               <span>Home</span>
-              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Home Option 1</a></li>
-              <li><a href="#">Home Option 2</a></li>
-              <li><a href="#">Home Option 3</a></li>
-            </ul>
           </li>
           <li class="has-dropdown">
             <a href="#about" class="sidebar-link">
@@ -1823,25 +1843,18 @@
               <li><a href="#">Equipment Resources</a></li>
             </ul>
           </li>
-          <li class="has-dropdown">
+          <li>
             <a href="#contact" class="sidebar-link">
               <i class="fas fa-phone"></i>
               <span>Contact</span>
-              <i class="fas fa-chevron-right dropdown-arrow"></i>
             </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Head Office</a></li>
-              <li><a href="#">Project Sites</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Feedback</a></li>
-            </ul>
           </li>
         </ul>
       </nav>
 
       <div class="sidebar-cta">
         <a href="#contact">
-          <i class="fas fa-phone" style="display: inline-block !important"></i>
+          <i class="fas fa-phone"></i>
           <span>Get Quote</span>
         </a>
       </div>
@@ -1854,7 +1867,7 @@
         <div class="hero-overlay">
           <div class="hero-background">
             <video id="background-video" autoplay loop muted playsinline>
-              <source src="hero_video.mp4" type="video/mp4" />
+              <source src="hero_section_video.MP4" type="video/mp4" />
               <!-- Fallback image if video doesn't load -->
               <img src="commercial_project.jpg" alt="Hero Background" />
             </video>
@@ -1871,8 +1884,8 @@
         </div>
       </section>
 
-    <!-- About Section-->
-       <section class="section about-section" id="about">
+      <!-- About Section-->
+      <section class="section about-section" id="about">
         <div class="container">
           <div class="section-title">
             <h2>About Us</h2>
@@ -1880,14 +1893,26 @@
           </div>
 
           <div class="about-content">
-            <div class="about-image fade-in-right" data-animation="fade-in-right">
-              <img src="building_project.jpg" alt="IKH Groups Building">
+            <div
+              class="about-image fade-in-right"
+              data-animation="fade-in-right"
+            >
+              <img src="building_project.jpg" alt="IKH Groups Building" />
             </div>
             <div class="about-text fade-in-left" data-animation="fade-in-left">
               <h3>Building Excellence Since Inception</h3>
-              <p>IKH Groups of Companies is a leading construction and services conglomerate with over 25 years of experience in delivering high-quality projects across Saudi Arabia and beyond.</p>
-              <p>Our commitment to excellence, innovation, and customer satisfaction has established us as a trusted partner in the construction industry. We specialize in industrial, commercial, and residential projects with a focus on quality and safety.</p>
-              
+              <p>
+                IKH Groups of Companies is a leading construction and services
+                conglomerate with over 25 years of experience in delivering
+                high-quality projects across Saudi Arabia and beyond.
+              </p>
+              <p>
+                Our commitment to excellence, innovation, and customer
+                satisfaction has established us as a trusted partner in the
+                construction industry. We specialize in industrial, commercial,
+                and residential projects with a focus on quality and safety.
+              </p>
+
               <div class="about-features">
                 <div class="about-feature">
                   <div class="about-feature-icon">
@@ -1934,114 +1959,74 @@
       <!-- Divisions Section -->
       <section class="section services-section" id="services">
         <div class="container">
-            <div class="section-title">
-          <h2>Our Divisions</h2>
-          <p>Comprehensive Services Across Multiple Sectors</p>
-        </div>
-        <div class="services">
-          <div class="service-card fade-in-up" data-animation="fade-in-up" data-delay="0">
-            <div class="service-icon"><i class="fas fa-industry"></i></div>
-            <h3>Construction</h3>
-            <p>
-              Specializing in industrial, commercial, and residential projects
-              with a focus on quality and safety.
-            </p>
-            <a href="#" class="service-link"
-              >Learn More <i class="fas fa-arrow-right"></i
-            ></a>
+          <div class="section-title">
+            <h2>Our Divisions</h2>
+            <p>Comprehensive Services Across Multiple Sectors</p>
           </div>
-          <div class="service-card fade-in-up" data-animation="fade-in-up" data-delay="200">
-            <div class="service-icon"><i class="fas fa-cogs"></i></div>
-            <h3>Support Services</h3>
-            <p>
-              Providing essential support services to ensure seamless project
-              execution and maintenance.
-            </p>
-            <a href="#" class="service-link"
-              >Learn More <i class="fas fa-arrow-right"></i
-            ></a>
+          <div class="services">
+            <div
+              class="service-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="0"
+            >
+              <div class="service-icon"><i class="fas fa-industry"></i></div>
+              <h3>Construction</h3>
+              <p>
+                Specializing in industrial, commercial, and residential projects
+                with a focus on quality and safety.
+              </p>
+              <a href="#" class="service-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+            <div
+              class="service-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="200"
+            >
+              <div class="service-icon"><i class="fas fa-cogs"></i></div>
+              <h3>Support Services</h3>
+              <p>
+                Providing essential support services to ensure seamless project
+                execution and maintenance.
+              </p>
+              <a href="#" class="service-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+            <div
+              class="service-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="400"
+            >
+              <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+              <h3>HVAC Services</h3>
+              <p>
+                Delivering efficient heating, ventilation, and air conditioning
+                solutions for diverse environments.
+              </p>
+              <a href="#" class="service-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+            <div
+              class="service-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="600"
+            >
+              <div class="service-icon"><i class="fas fa-desktop"></i></div>
+              <h3>IT Solutions</h3>
+              <p>
+                Implementing cutting-edge technology solutions to optimize
+                operations and enhance digital infrastructure.
+              </p>
+              <a href="#" class="service-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
           </div>
-          <div class="service-card fade-in-up"  data-animation="fade-in-up" data-delay="400">
-            <div class="service-icon"><i class="fas fa-snowflake"></i></div>
-            <h3>HVAC Services</h3>
-            <p>
-              Delivering efficient heating, ventilation, and air conditioning
-              solutions for diverse environments.
-            </p>
-            <a href="#" class="service-link"
-              >Learn More <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="service-card fade-in-up" data-animation="fade-in-up" data-delay="600">
-            <div class="service-icon"><i class="fas fa-desktop"></i></div>
-            <h3>IT Solutions</h3>
-            <p>
-              Implementing cutting-edge technology solutions to optimize
-              operations and enhance digital infrastructure.
-            </p>
-            <a href="#" class="service-link"
-              >Learn More <i class="fas fa-arrow-right"></i
-            ></a>
-          </div>
-        </div>
         </div>
       </section>
-
-      <!-- Add this section after the Stats Section and before the Projects Section -->
-      <!-- <section class="section bg-gray-light" id="why-choose-us">
-        <div class="container">
-          <div class="section-title">
-            <h2>Why Choose Us</h2>
-            <p>We are the best in industry since 1998</p>
-          </div>
-
-          <div class="services">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-medal"></i>
-              </div>
-              <h3>Quality Assurance</h3>
-              <p>
-                We maintain the highest standards of quality in all our
-                projects, ensuring durability and excellence.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <h3>On Time Delivery</h3>
-              <p>
-                Our efficient project management ensures timely completion
-                without compromising quality.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-wallet"></i>
-              </div>
-              <h3>Cost Effective</h3>
-              <p>
-                We provide competitive pricing while maintaining the highest
-                quality standards.
-              </p>
-            </div>
-
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-user-tie"></i>
-              </div>
-              <h3>Experienced Team</h3>
-              <p>
-                Our professionals bring years of experience and expertise to
-                every project.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> -->
 
       <!-- Stats Section -->
       <section id="stats" class="section stats-section">
@@ -2052,28 +2037,44 @@
           </div>
 
           <div class="stats-grid">
-            <div class="stat-card fade-in-up" data-animation="fade-in-up" data-delay="0">
+            <div
+              class="stat-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="0"
+            >
               <div class="stat-icon">
                 <i class="fas fa-building"></i>
               </div>
               <div class="stat-value" data-count="150">0</div>
               <p class="stat-label">Projects Completed</p>
             </div>
-            <div class="stat-card fade-in-up" data-animation="fade-in-up" data-delay="200">
+            <div
+              class="stat-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="200"
+            >
               <div class="stat-icon">
                 <i class="fas fa-users"></i>
               </div>
               <div class="stat-value" data-count="500">0</div>
               <p class="stat-label">Satisfied Clients</p>
             </div>
-            <div class="stat-card fade-in-up" data-animation="fade-in-up" data-delay="400">
+            <div
+              class="stat-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="400"
+            >
               <div class="stat-icon">
                 <i class="fas fa-award"></i>
               </div>
               <div class="stat-value" data-count="25">0</div>
               <p class="stat-label">Years Experience</p>
             </div>
-            <div class="stat-card fade-in-up" data-animation="fade-in-up" data-delay="600">
+            <div
+              class="stat-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="600"
+            >
               <div class="stat-icon">
                 <i class="fas fa-clock"></i>
               </div>
@@ -2093,7 +2094,11 @@
           </div>
 
           <div class="projects-grid">
-            <div class="project-card fade-in-up" data-animation="fade-in-up" data-delay="0">
+            <div
+              class="project-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="0"
+            >
               <img
                 src="industry_project.webp"
                 alt="Industrial Plant"
@@ -2102,11 +2107,17 @@
               <div class="project-overlay">
                 <div class="project-content">
                   <h3 class="project-title">Industrial Plant</h3>
-                  <p class="project-location"><i class="fas fa-map-marker-alt"></i> Saudi Arabia</p>
+                  <p class="project-location">
+                    <i class="fas fa-map-marker-alt"></i> Saudi Arabia
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="project-card fade-in-up" data-animation="fade-in-up" data-delay="200">
+            <div
+              class="project-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="200"
+            >
               <img
                 src="commercial_project.jpg"
                 alt="Commercial Complex"
@@ -2115,11 +2126,17 @@
               <div class="project-overlay">
                 <div class="project-content">
                   <h3 class="project-title">Commercial Complex</h3>
-                  <p class="project-location"><i class="fas fa-map-marker-alt"></i> Saudi Arabia</p>
+                  <p class="project-location">
+                    <i class="fas fa-map-marker-alt"></i> Saudi Arabia
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="project-card fade-in-up" data-animation="fade-in-up" data-delay="400">
+            <div
+              class="project-card fade-in-up"
+              data-animation="fade-in-up"
+              data-delay="400"
+            >
               <img
                 src="building_project.jpg"
                 alt="Residential Building"
@@ -2128,7 +2145,9 @@
               <div class="project-overlay">
                 <div class="project-content">
                   <h3 class="project-title">Residential Building</h3>
-                  <p class="project-location"><i class="fas fa-map-marker-alt"></i> Saudi Arabia</p>
+                  <p class="project-location">
+                    <i class="fas fa-map-marker-alt"></i> Saudi Arabia
+                  </p>
                 </div>
               </div>
             </div>
@@ -2149,7 +2168,11 @@
           </div>
 
           <div class="gallery-grid">
-            <div class="gallery-item fade-in" data-animation="fade-in" data-delay="0">
+            <div
+              class="gallery-item fade-in"
+              data-animation="fade-in"
+              data-delay="0"
+            >
               <img
                 src="industry_project.webp"
                 alt="Construction site with cranes"
@@ -2159,7 +2182,11 @@
                 <p class="gallery-caption">Modern Construction Site</p>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-animation="fade-in" data-delay="100">
+            <div
+              class="gallery-item fade-in"
+              data-animation="fade-in"
+              data-delay="100"
+            >
               <img
                 src="building_project.jpg"
                 alt="Office building exterior"
@@ -2169,7 +2196,11 @@
                 <p class="gallery-caption">Commercial Office Complex</p>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-animation="fade-in" data-delay="200">
+            <div
+              class="gallery-item fade-in"
+              data-animation="fade-in"
+              data-delay="200"
+            >
               <img
                 src="commercial_project.jpg"
                 alt="Residential apartments"
@@ -2179,7 +2210,11 @@
                 <p class="gallery-caption">Luxury Residential Project</p>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-animation="fade-in" data-delay="300">
+            <div
+              class="gallery-item fade-in"
+              data-animation="fade-in"
+              data-delay="300"
+            >
               <img
                 src="industry_project.webp"
                 alt="Interior design"
@@ -2189,7 +2224,11 @@
                 <p class="gallery-caption">Interior Finishing Work</p>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-animation="fade-in" data-delay="400">
+            <div
+              class="gallery-item fade-in"
+              data-animation="fade-in"
+              data-delay="400"
+            >
               <img
                 src="building_project.jpg"
                 alt="HVAC installation"
@@ -2199,7 +2238,11 @@
                 <p class="gallery-caption">HVAC System Installation</p>
               </div>
             </div>
-            <div class="gallery-item fade-in" data-animation="fade-in" data-delay="500">
+            <div
+              class="gallery-item fade-in"
+              data-animation="fade-in"
+              data-delay="500"
+            >
               <img
                 src="commercial_project.jpg"
                 alt="Construction team"
@@ -2217,7 +2260,7 @@
       <section class="section clients-section" id="clients">
         <div class="container">
           <div class="section-title">
-            <h2 >Our Clients</h2>
+            <h2>Our Clients</h2>
             <p class="section-description">
               Trusted by leading companies across industries
             </p>
@@ -2227,14 +2270,14 @@
             <div class="client-track">
               <div class="client-item">
                 <img
-                  src="client_1.jpg"
+                  src="https://images.seeklogo.com/logo-png/10/1/petron-logo-png_seeklogo-108079.png"
                   alt="Tech Solutions"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://www.iploca.com/app/uploads/2021/10/BonattiLogo_trasp-lbox-320x160-FFFFFF.png"
+                  src="https://www.england.nhs.uk/nhsidentity/wp-content/uploads/sites/38/2016/04/nhs-logo-digital-space.jpg"
                   alt="Construction Co"
                   class="client-logo"
                 />
@@ -2255,28 +2298,49 @@
               </div>
               <div class="client-item">
                 <img
-                  src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/072018/petron_logo_1.jpg?oBaiUiETN2tHrwavAZNvke.LpB1Euhzi&itok=Kdz1PbLD"
+                  src="https://cdn.brandfetch.io/idRRbNH8sS/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
                   alt="Elite Developers"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhxT88xdW2L6aluuOTj3aNAajTFN4eBNs0A&s"
+                  src="https://www.logo.wine/a/logo/Abengoa/Abengoa-Logo.wine.svg"
                   alt="Prime Properties"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="client_1.jpg"
+                  src="https://images.seeklogo.com/logo-png/36/1/yasref-logo-png_seeklogo-369851.png"
                   alt="Innovative Designs"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWFf1HA9pjjt8UX86nQxrFgOiIAXu5zchQA&s"
+                  src="https://www.saudifal.com.sa/img/logo2-1.png"
+                  alt="Master Architects"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://logowik.com/content/uploads/images/samsung-engineering3687.logowik.com.webp"
+                  alt="Master Architects"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Samsung_C%26T_logo.svg/2560px-Samsung_C%26T_logo.svg.png"
+                  alt="Master Architects"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://logowik.com/content/uploads/images/saipem5622.logowik.com.webp"
                   alt="Master Architects"
                   class="client-logo"
                 />
@@ -2284,56 +2348,70 @@
               <!-- Duplicate for continuous scrolling -->
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://images.seeklogo.com/logo-png/10/1/petron-logo-png_seeklogo-108079.png"
                   alt="Tech Solutions"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://www.england.nhs.uk/nhsidentity/wp-content/uploads/sites/38/2016/04/nhs-logo-digital-space.jpg"
                   alt="Construction Co"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWFf1HA9pjjt8UX86nQxrFgOiIAXu5zchQA&s"
                   alt="Global Industries"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhxT88xdW2L6aluuOTj3aNAajTFN4eBNs0A&s"
                   alt="Modern Builders"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://cdn.brandfetch.io/idRRbNH8sS/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
                   alt="Elite Developers"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://www.logo.wine/a/logo/Abengoa/Abengoa-Logo.wine.svg"
                   alt="Prime Properties"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://www.saudifal.com.sa/img/logo2-1.png"
                   alt="Innovative Designs"
                   class="client-logo"
                 />
               </div>
               <div class="client-item">
                 <img
-                  src="https://placehold.co/200x100"
+                  src="https://logowik.com/content/uploads/images/samsung-engineering3687.logowik.com.webp"
+                  alt="Master Architects"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Samsung_C%26T_logo.svg/2560px-Samsung_C%26T_logo.svg.png"
+                  alt="Master Architects"
+                  class="client-logo"
+                />
+              </div>
+              <div class="client-item">
+                <img
+                  src="https://logowik.com/content/uploads/images/saipem5622.logowik.com.webp"
                   alt="Master Architects"
                   class="client-logo"
                 />
@@ -2367,7 +2445,7 @@
       </section>
 
       <!-- Footer -->
-            <footer class="site-footer">
+      <footer class="site-footer">
         <div class="container">
           <div class="footer-logo-container">
             <img
@@ -2404,12 +2482,36 @@
             <div>
               <h3 class="footer-heading">Quick Links</h3>
               <ul class="footer-links">
-                <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
-                <li><a href="#about" class="footer-link"><i class="fas fa-chevron-right"></i> About</a></li>
-                <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right"></i> Divisions</a></li>
-                <li><a href="#projects" class="footer-link"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                <li><a href="#gallery" class="footer-link"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                <li><a href="#contact" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                <li>
+                  <a href="#" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> Home</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> About</a
+                  >
+                </li>
+                <li>
+                  <a href="#services" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> Divisions</a
+                  >
+                </li>
+                <li>
+                  <a href="#projects" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> Projects</a
+                  >
+                </li>
+                <li>
+                  <a href="#gallery" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> Gallery</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> Contact</a
+                  >
+                </li>
               </ul>
             </div>
 
@@ -2417,16 +2519,24 @@
               <h3 class="footer-heading">Our Divisions</h3>
               <ul class="footer-links">
                 <li>
-                  <a href="#construction" class="footer-link"><i class="fas fa-chevron-right"></i> Construction</a>
+                  <a href="#construction" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> Construction</a
+                  >
                 </li>
                 <li>
-                  <a href="#support-services" class="footer-link"><i class="fas fa-chevron-right"></i> Support Services</a>
+                  <a href="#support-services" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> Support Services</a
+                  >
                 </li>
                 <li>
-                  <a href="#hvac-services" class="footer-link"><i class="fas fa-chevron-right"></i> HVAC Services</a>
+                  <a href="#hvac-services" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> HVAC Services</a
+                  >
                 </li>
                 <li>
-                  <a href="#it-solutions" class="footer-link"><i class="fas fa-chevron-right"></i> IT Solutions</a>
+                  <a href="#it-solutions" class="footer-link"
+                    ><i class="fas fa-chevron-right"></i> IT Solutions</a
+                  >
                 </li>
               </ul>
             </div>
@@ -2448,7 +2558,9 @@
                 </li>
                 <li class="footer-contact-item">
                   <i class="fas fa-clock footer-contact-icon"></i>
-                  <span class="footer-contact-text">Sun-Thu: 9:00 AM - 6:00 PM</span>
+                  <span class="footer-contact-text"
+                    >Sun-Thu: 9:00 AM - 6:00 PM</span
+                  >
                 </li>
               </ul>
             </div>
@@ -2474,129 +2586,163 @@
     </main>
 
     <!-- JavaScript -->
-     <script>
-  document.addEventListener("DOMContentLoaded", function () {
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        //search button Header
+        const searchIcon = document.getElementById("search-icon");
+        const searchContainer = document.querySelector(".search-button");
 
-     // Back to top button
-      const backToTopBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-          backToTopBtn.classList.add('active');
-        } else {
-          backToTopBtn.classList.remove('active');
-        }
-      });
-    // Toggle mobile menu
-    const menu = document.getElementById("mobileMenu");
-    const menuBtn = document.querySelector(".mobile-menu-button");
+        searchIcon.addEventListener("click", (e) => {
+          e.stopPropagation(); // stop click bubbling
+          searchContainer.classList.toggle("active");
 
-    if (menu && menuBtn) {
-      menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("active");
-      });
-
-      // Close mobile menu on outside click
-      document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
-          menu.classList.remove("active");
-        }
-      });
-
-      // Close on resize
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 767) {
-          menu.classList.remove("active");
-        }
-      });
-    }
-
-    // Mobile dropdowns
-    const mobileDropdowns = document.querySelectorAll(".mobile-dropdown > a");
-    mobileDropdowns.forEach((dropdown) => {
-      dropdown.addEventListener("click", function (e) {
-        e.preventDefault();
-        const parent = this.parentElement;
-        parent.classList.toggle("active");
-
-        mobileDropdowns.forEach((item) => {
-          if (item.parentElement !== parent) {
-            item.parentElement.classList.remove("active");
+          const input = document.getElementById("search-input");
+          if (searchContainer.classList.contains("active")) {
+            input.focus();
           }
         });
-      });
-    });
 
-    // Background video effect
-    const video = document.getElementById("background-video");
-    if (video) {
-      document.addEventListener("mousemove", function (e) {
-        const x = (e.clientX / window.innerWidth - 0.5) * 10;
-        const y = (e.clientY / window.innerHeight - 0.5) * 10;
-        video.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
-      });
-    }
+        // Optional: click outside to close
+        document.addEventListener("click", (e) => {
+          const searchContainer = document.querySelector(".search-button");
+          if (!searchContainer.contains(e.target)) {
+            searchContainer.classList.remove("active");
+          }
+        });
 
-    // Section reveal animation
-    const sections = document.querySelectorAll(".section, .projects-grid, .gallery-grid");
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+        // Back to top button
+        const backToTopBtn = document.getElementById("backToTop");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            backToTopBtn.classList.add("active");
+          } else {
+            backToTopBtn.classList.remove("active");
+          }
+        });
+        // Toggle mobile menu
+        const menu = document.getElementById("mobileMenu");
+        const menuBtn = document.querySelector(".mobile-menu-button");
 
-    sections.forEach((section) => {
-      revealObserver.observe(section);
-    });
-
-    // Stat counter animation
-    const statObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          document.querySelectorAll(".stat-value").forEach((el) => {
-            const target = parseInt(el.getAttribute("data-count") || el.textContent.replace(/\D/g, ""));
-            let current = 0;
-            const step = target / 200;
-            const timer = setInterval(() => {
-              current += step;
-              if (current >= target) {
-                el.textContent = target + (el.textContent.includes("+") ? "+" : "");
-                clearInterval(timer);
-              } else {
-                el.textContent = Math.floor(current) + (el.textContent.includes("+") ? "+" : "");
-              }
-            }, 10);
+        if (menu && menuBtn) {
+          menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("active");
           });
-          observer.disconnect();
+
+          // Close mobile menu on outside click
+          document.addEventListener("click", (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+              menu.classList.remove("active");
+            }
+          });
+
+          // Close on resize
+          window.addEventListener("resize", () => {
+            if (window.innerWidth > 767) {
+              menu.classList.remove("active");
+            }
+          });
         }
-      });
-    }, { threshold: 0.6 });
 
-    const statGrid = document.querySelector(".stats-grid");
-    if (statGrid) statObserver.observe(statGrid);
+        // Mobile dropdowns
+        const mobileDropdowns = document.querySelectorAll(
+          ".mobile-dropdown > a"
+        );
+        mobileDropdowns.forEach((dropdown) => {
+          dropdown.addEventListener("click", function (e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            parent.classList.toggle("active");
 
-    // Scroll-based animation
-    const animatedElements = document.querySelectorAll("[data-animation]");
-    function checkScroll() {
-      const triggerBottom = window.innerHeight * 0.8;
-      animatedElements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < triggerBottom) {
-          const delay = el.getAttribute("data-delay") || 0;
-          setTimeout(() => {
-            el.classList.add(el.getAttribute("data-animation"));
-          }, delay);
+            mobileDropdowns.forEach((item) => {
+              if (item.parentElement !== parent) {
+                item.parentElement.classList.remove("active");
+              }
+            });
+          });
+        });
+
+        // Background video effect
+        const video = document.getElementById("background-video");
+        if (video) {
+          document.addEventListener("mousemove", function (e) {
+            const x = (e.clientX / window.innerWidth - 0.5) * 10;
+            const y = (e.clientY / window.innerHeight - 0.5) * 10;
+            video.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+          });
         }
+
+        // Section reveal animation
+        const sections = document.querySelectorAll(
+          ".section, .projects-grid, .gallery-grid"
+        );
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        sections.forEach((section) => {
+          revealObserver.observe(section);
+        });
+
+        // Stat counter animation
+        const statObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                document.querySelectorAll(".stat-value").forEach((el) => {
+                  const target = parseInt(
+                    el.getAttribute("data-count") ||
+                      el.textContent.replace(/\D/g, "")
+                  );
+                  let current = 0;
+                  const step = target / 200;
+                  const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                      el.textContent =
+                        target + (el.textContent.includes("+") ? "+" : "");
+                      clearInterval(timer);
+                    } else {
+                      el.textContent =
+                        Math.floor(current) +
+                        (el.textContent.includes("+") ? "+" : "");
+                    }
+                  }, 10);
+                });
+                observer.disconnect();
+              }
+            });
+          },
+          { threshold: 0.6 }
+        );
+
+        const statGrid = document.querySelector(".stats-grid");
+        if (statGrid) statObserver.observe(statGrid);
+
+        // Scroll-based animation
+        const animatedElements = document.querySelectorAll("[data-animation]");
+        function checkScroll() {
+          const triggerBottom = window.innerHeight * 0.8;
+          animatedElements.forEach((el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < triggerBottom) {
+              const delay = el.getAttribute("data-delay") || 0;
+              setTimeout(() => {
+                el.classList.add(el.getAttribute("data-animation"));
+              }, delay);
+            }
+          });
+        }
+        window.addEventListener("scroll", checkScroll);
+        window.addEventListener("load", checkScroll);
       });
-    }
-    window.addEventListener("scroll", checkScroll);
-    window.addEventListener("load", checkScroll);
-
-   
-  });
-</script>
-
-     </body>
+    </script>
+  </body>
 </html>
