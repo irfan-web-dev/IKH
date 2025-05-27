@@ -20,9 +20,9 @@
       rel="stylesheet"
     />
     <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <style>
       /* Reset and base styles */
@@ -299,12 +299,21 @@
         position: fixed;
         top: 80px;
         left: 0;
-        height: calc(100vh - 80px);
         width: 64px;
-        background-color: var(--white);
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
         z-index: 40;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
         transition: width 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 20px 0;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        transform: translateY(-50%);
+        top: 50%;
       }
 
       .sidebar:hover {
@@ -313,6 +322,10 @@
 
       .sidebar-nav {
         margin-top: 16px;
+      }
+
+      .sidebar-nav li.has-dropdown {
+        position: relative;
       }
 
       .sidebar-nav ul {
@@ -381,14 +394,10 @@
       }
 
       /* Sidebar Dropdown Styles */
-      .has-dropdown {
-        position: relative;
-      }
-
-      .dropdown-menu {
+      .has-dropdown .dropdown-menu {
         position: absolute;
         left: 100%;
-        top: 0;
+        top: 50%;
         width: 200px;
         background: var(--white);
         border-radius: 8px;
@@ -398,6 +407,29 @@
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 100;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .has-dropdown .dropdown-menu {
+        max-height: 300px;
+        overflow-y: auto;
+        scrollbar-width: thin; /* For Firefox */
+        scrollbar-color: var(--primary-light) transparent; /* For Firefox */
+      }
+
+      /* Custom scrollbar for Webkit browsers */
+      .has-dropdown .dropdown-menu::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .has-dropdown .dropdown-menu::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .has-dropdown .dropdown-menu::-webkit-scrollbar-thumb {
+        background-color: var(--primary-light);
+        border-radius: 3px;
       }
 
       .has-dropdown:hover .dropdown-menu {
@@ -455,11 +487,16 @@
       .sidebar-link:hover {
         background-color: var(--primary-light);
         color: var(--primary);
+        transform: translateX(4px);
       }
 
       .sidebar-link i {
         font-size: 20px;
         min-width: 20px;
+      }
+
+      .sidebar-link:hover i {
+        text-shadow: 0 0 8px rgba(249, 115, 22, 0.5);
       }
 
       .sidebar-link span {
@@ -472,51 +509,6 @@
       }
 
       .sidebar:hover .sidebar-link span {
-        opacity: 1;
-      }
-
-      .sidebar-cta {
-        position: absolute;
-        bottom: 24px;
-        left: 0;
-        right: 0;
-        padding: 0 12px;
-      }
-
-      .sidebar-cta a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        background-color: var(--primary);
-        color: var(--white);
-        border-radius: 8px;
-        transition: all 0.3s ease;
-      }
-
-      .sidebar-cta a:hover {
-        background-color: var(--primary-dark);
-      }
-
-      .sidebar-cta i {
-        display: inline-block !important;
-        font-size: 20px;
-        min-width: 20px;
-        display: block;
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-
-      .sidebar-cta span {
-        margin-left: 12px;
-        white-space: nowrap;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        font-size: 14px;
-        font-weight: 500;
-      }
-
-      .sidebar:hover .sidebar-cta span {
         opacity: 1;
       }
 
@@ -1693,195 +1685,196 @@
       </div>
     </header>
 
-   <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li>
-      <a href="#" class="mobile-nav-link">
-        <span>Home</span>
-      </a>
-    </li>
-    <li class="mobile-dropdown">
-      <a href="#about" class="mobile-nav-link">
-        <span>About</span>
-        <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
-      </a>
-      <ul class="mobile-dropdown-menu">
-        <li><a href="#" class="mobile-nav-link">Groups Chairman</a></li>
-        <li><a href="#" class="mobile-nav-link">President</a></li>
-        <li><a href="#" class="mobile-nav-link">general manager</a></li>
-        <li><a href="#" class="mobile-nav-link">Our Staffs</a></li>
-        <li><a href="#" class="mobile-nav-link">Our Mission</a></li>
-        <li><a href="#" class="mobile-nav-link">Our Vision</a></li>
-        <li><a href="#" class="mobile-nav-link">Our Objectives</a></li>
-        <li><a href="#" class="mobile-nav-link">Epilogue</a></li>
-        <li><a href="#" class="mobile-nav-link">Careers</a></li>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li>
+          <a href="#" class="mobile-nav-link">
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#about" class="mobile-nav-link">
+            <span>About</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Groups Chairman</a></li>
+            <li><a href="#" class="mobile-nav-link">President</a></li>
+            <li><a href="#" class="mobile-nav-link">general manager</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Staffs</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Mission</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Vision</a></li>
+            <li><a href="#" class="mobile-nav-link">Our Objectives</a></li>
+            <li><a href="#" class="mobile-nav-link">Epilogue</a></li>
+            <li><a href="#" class="mobile-nav-link">Careers</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#jv-works" class="mobile-nav-link">
+            <span>JV & Works</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Joint Ventures</a></li>
+            <li><a href="#" class="mobile-nav-link">Works</a></li>
+            <li><a href="#" class="mobile-nav-link">Completed Projects</a></li>
+            <li><a href="#" class="mobile-nav-link">Ongoing Projects</a></li>
+            <li><a href="#" class="mobile-nav-link">Clients</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#divisions" class="mobile-nav-link">
+            <span>Divisions</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Construction</a></li>
+            <li><a href="#" class="mobile-nav-link">Support Services</a></li>
+            <li><a href="#" class="mobile-nav-link">HVAC Services</a></li>
+            <li><a href="#" class="mobile-nav-link">IT Solutions</a></li>
+            <li>
+              <a href="#" class="mobile-nav-link">Civil Work & RCC Buildings</a>
+            </li>
+            <li><a href="#" class="mobile-nav-link">Steel Buildings</a></li>
+            <li><a href="#" class="mobile-nav-link">Electrical Work</a></li>
+            <li>
+              <a href="#" class="mobile-nav-link">Buildings Construction</a>
+            </li>
+            <li>
+              <a href="#" class="mobile-nav-link">Overhead & Telephone Lines</a>
+            </li>
+            <li><a href="#" class="mobile-nav-link">Mechanical Work</a></li>
+            <li><a href="#" class="mobile-nav-link">Piping Systems</a></li>
+            <li>
+              <a href="#" class="mobile-nav-link">Fire Protection Systems</a>
+            </li>
+            <li><a href="#" class="mobile-nav-link">Painting Work</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#policies" class="mobile-nav-link">
+            <span>Policies</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Quality management</a></li>
+            <li><a href="#" class="mobile-nav-link">She management</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <a href="#resources" class="mobile-nav-link">
+            <span>Resources</span>
+            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" class="mobile-nav-link">Manpower Resources</a></li>
+            <li><a href="#" class="mobile-nav-link">Equipment Resources</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#contact" class="mobile-nav-link">
+            <span>Contact</span>
+          </a>
+        </li>
       </ul>
-    </li>
-    <li class="mobile-dropdown">
-      <a href="#jv-works" class="mobile-nav-link">
-        <span>JV & Works</span>
-        <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
-      </a>
-      <ul class="mobile-dropdown-menu">
-        <li><a href="#" class="mobile-nav-link">Joint Ventures</a></li>
-        <li><a href="#" class="mobile-nav-link">Works</a></li>
-        <li><a href="#" class="mobile-nav-link">Completed Projects</a></li>
-        <li><a href="#" class="mobile-nav-link">Ongoing Projects</a></li>
-        <li><a href="#" class="mobile-nav-link">Clients</a></li>
-      </ul>
-    </li>
-    <li class="mobile-dropdown">
-      <a href="#divisions" class="mobile-nav-link">
-        <span>Divisions</span>
-        <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
-      </a>
-      <ul class="mobile-dropdown-menu">
-        <li><a href="#" class="mobile-nav-link">Construction</a></li>
-        <li><a href="#" class="mobile-nav-link">Support Services</a></li>
-        <li><a href="#" class="mobile-nav-link">HVAC Services</a></li>
-        <li><a href="#" class="mobile-nav-link">IT Solutions</a></li>
-        <li><a href="#" class="mobile-nav-link">Civil Work & RCC Buildings</a></li>
-        <li><a href="#" class="mobile-nav-link">Steel Buildings</a></li>
-        <li><a href="#" class="mobile-nav-link">Electrical Work</a></li>
-        <li><a href="#" class="mobile-nav-link">Buildings Construction</a></li>
-        <li><a href="#" class="mobile-nav-link">Overhead & Telephone Lines</a></li>
-        <li><a href="#" class="mobile-nav-link">Mechanical Work</a></li>
-        <li><a href="#" class="mobile-nav-link">Piping Systems</a></li>
-        <li><a href="#" class="mobile-nav-link">Fire Protection Systems</a></li>
-        <li><a href="#" class="mobile-nav-link">Painting Work</a></li>
-      </ul>
-    </li>
-    <li class="mobile-dropdown">
-      <a href="#policies" class="mobile-nav-link">
-        <span>Policies</span>
-        <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
-      </a>
-      <ul class="mobile-dropdown-menu">
-        <li><a href="#" class="mobile-nav-link">Quality management</a></li>
-        <li><a href="#" class="mobile-nav-link">She management</a></li>
-      </ul>
-    </li>
-    <li class="mobile-dropdown">
-      <a href="#resources" class="mobile-nav-link">
-        <span>Resources</span>
-        <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
-      </a>
-      <ul class="mobile-dropdown-menu">
-        <li><a href="#" class="mobile-nav-link">Manpower Resources</a></li>
-        <li><a href="#" class="mobile-nav-link">Equipment Resources</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#contact" class="mobile-nav-link">
-        <span>Contact</span>
-      </a>
-    </li>
-  </ul>
-</div>
+    </div>
 
-<!-- Sidebar -->
-<div class="sidebar">
-  <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a href="#" class="sidebar-link">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <li class="has-dropdown">
-        <a href="#about" class="sidebar-link">
-          <i class="fas fa-info-circle"></i>
-          <span>About</span>
-          <i class="fas fa-chevron-right dropdown-arrow"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Groups Chairman</a></li>
-          <li><a href="#">President</a></li>
-          <li><a href="#">General manager</a></li>
-          <li><a href="#">Our Staffs</a></li>
-          <li><a href="#">Our Mission</a></li>
-          <li><a href="#">Our Vision</a></li>
-          <li><a href="#">Our Objectives</a></li>
-          <li><a href="#">Epilogue</a></li>
-          <li><a href="#">Careers</a></li>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#" class="sidebar-link">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="has-dropdown">
+            <a href="#about" class="sidebar-link">
+              <i class="fas fa-info-circle"></i>
+              <span>About</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Groups Chairman</a></li>
+              <li><a href="#">President</a></li>
+              <li><a href="#">General manager</a></li>
+              <li><a href="#">Our Staffs</a></li>
+              <li><a href="#">Our Mission</a></li>
+              <li><a href="#">Our Vision</a></li>
+              <li><a href="#">Our Objectives</a></li>
+              <li><a href="#">Epilogue</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#jv-works" class="sidebar-link">
+              <i class="fas fa-briefcase"></i>
+              <span>JV & Works</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Joint Ventures</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Completed Projects</a></li>
+              <li><a href="#">Ongoing Projects</a></li>
+              <li><a href="#">Clients</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#divisions" class="sidebar-link">
+              <i class="fas fa-th-large"></i>
+              <span>Divisions</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Construction</a></li>
+              <li><a href="#">Support Services</a></li>
+              <li><a href="#">HVAC Services</a></li>
+              <li><a href="#">IT Solutions</a></li>
+              <li><a href="#">Civil Work & RCC Buildings</a></li>
+              <li><a href="#">Steel Buildings</a></li>
+              <li><a href="#">Electrical Work</a></li>
+              <li><a href="#">Buildings Construction</a></li>
+              <li><a href="#">Overhead & Telephone Lines</a></li>
+              <li><a href="#">Mechanical Work</a></li>
+              <li><a href="#">Piping Systems</a></li>
+              <li><a href="#">Fire Protection Systems</a></li>
+              <li><a href="#">Painting Work</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#policies" class="sidebar-link">
+              <i class="fas fa-file-alt"></i>
+              <span>Policies</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Quality management</a></li>
+              <li><a href="#">She management</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#resources" class="sidebar-link">
+              <i class="fas fa-building"></i>
+              <span>Resources</span>
+              <i class="fas fa-chevron-right dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Manpower Resources</a></li>
+              <li><a href="#">Equipment Resources</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#contact" class="sidebar-link">
+              <i class="fas fa-phone"></i>
+              <span>Contact</span>
+            </a>
+          </li>
         </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="#jv-works" class="sidebar-link">
-          <i class="fas fa-briefcase"></i>
-          <span>JV & Works</span>
-          <i class="fas fa-chevron-right dropdown-arrow"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Joint Ventures</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">Completed Projects</a></li>
-          <li><a href="#">Ongoing Projects</a></li>
-          <li><a href="#">Clients</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="#divisions" class="sidebar-link">
-          <i class="fas fa-th-large"></i>
-          <span>Divisions</span>
-          <i class="fas fa-chevron-right dropdown-arrow"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Construction</a></li>
-          <li><a href="#">Support Services</a></li>
-          <li><a href="#">HVAC Services</a></li>
-          <li><a href="#">IT Solutions</a></li>
-          <li><a href="#">Civil Work & RCC Buildings</a></li>
-          <li><a href="#">Steel Buildings</a></li>
-          <li><a href="#">Electrical Work</a></li>
-          <li><a href="#">Buildings Construction</a></li>
-          <li><a href="#">Overhead & Telephone Lines</a></li>
-          <li><a href="#">Mechanical Work</a></li>
-          <li><a href="#">Piping Systems</a></li>
-          <li><a href="#">Fire Protection Systems</a></li>
-          <li><a href="#">Painting Work</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="#policies" class="sidebar-link">
-          <i class="fas fa-file-alt"></i>
-          <span>Policies</span>
-          <i class="fas fa-chevron-right dropdown-arrow"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Quality management</a></li>
-          <li><a href="#">She management</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="#resources" class="sidebar-link">
-          <i class="fas fa-building"></i>
-          <span>Resources</span>
-          <i class="fas fa-chevron-right dropdown-arrow"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Manpower Resources</a></li>
-          <li><a href="#">Equipment Resources</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#contact" class="sidebar-link">
-          <i class="fas fa-phone"></i>
-          <span>Contact</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="sidebar-cta">
-    <a href="#contact">
-      <i class="fas fa-phone"></i>
-      <span>Get Quote</span>
-    </a>
-  </div>
-</div>
+      </nav>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -1899,10 +1892,21 @@
 
         <div class="container">
           <div class="hero-content">
-            <h1 class="hero-title animate__animated animate__fadeInDown">WELCOME TO IKH GROUPS</h1>
-            <h2 class="hero-subtitle animate__animated animate__zoomIn">Asian Star General Contracting</h2>
-            <p class="hero-text animate__animated animate__fadeInUp">IKH General construction CO.</p>
-            <a href="#about" class="button button-primary animate__animated animate__fadeInUp animate__delay-1s"> Read More </a>
+            <h1 class="hero-title animate__animated animate__fadeInDown">
+              WELCOME TO IKH GROUPS
+            </h1>
+            <h2 class="hero-subtitle animate__animated animate__zoomIn">
+              Asian Star General Contracting
+            </h2>
+            <p class="hero-text animate__animated animate__fadeInUp">
+              IKH General construction CO.
+            </p>
+            <a
+              href="#about"
+              class="button button-primary animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              Read More
+            </a>
           </div>
         </div>
       </section>
@@ -1922,7 +1926,10 @@
             >
               <img src="building_project.jpg" alt="IKH Groups Building" />
             </div>
-            <div class="about-text animate__animated animate__slideInRight fade-in-left" data-animation="fade-in-left">
+            <div
+              class="about-text animate__animated animate__slideInRight fade-in-left"
+              data-animation="fade-in-left"
+            >
               <h3>Building Excellence Since Inception</h3>
               <p>
                 IKH Groups of Companies is a leading construction and services
