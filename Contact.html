@@ -28,8 +28,7 @@
       /* Contact Hero Section */
       .contact-hero-section {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("commercial_project.jpg")
-            no-repeat center center;
+          url("commercial_project.jpg") no-repeat center center;
         background-size: cover;
         padding: 120px 0 80px;
         text-align: center;
@@ -64,6 +63,47 @@
       }
 
       /* Contact Section */
+
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 20px;
+        margin: 40px auto;
+        max-width: 1200px;
+        box-sizing: border-box;
+      }
+
+      .contact-info-section {
+        background-color: #f9f9f9;
+        padding: 40px;
+        border-radius: 16px;
+        border-left: 5px solid var(--primary);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+      }
+
+      .contact-methods-grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr;
+      }
+
+      .contact-method-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-form-section {
+        background-color: var(--gray-light);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+      }
+
       .contact-section {
         padding: 80px 0;
         background-color: var(--white);
@@ -214,6 +254,27 @@
         .contact-methods {
           grid-template-columns: 1fr 1fr;
         }
+
+        .contact-container {
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 40px;
+          margin-top: 60px;
+          margin-bottom: 60px;
+        }
+
+        .contact-info-section {
+          flex: 1;
+        }
+
+        .contact-form-section {
+          flex: 1;
+        }
+
+        .contact-methods-grid {
+          grid-template-columns: 1fr 1fr;
+        }
       }
     </style>
   </head>
@@ -238,122 +299,107 @@
       </section>
 
       <!-- Contact Section -->
-      <section class="contact-section">
-        <div class="container">
-          <div class="contact-grid">
-            <div class="contact-info">
-              <h2 class="section-title">Our Contact Information</h2>
-              <p class="contact-description">
-                We're here to help and answer any questions you might have. We
-                look forward to hearing from you.
-              </p>
+      <!-- Replace the contact-grid section with this: -->
+      <div class="contact-container">
+        <div class="contact-info-section">
+          <h2 class="section-title">Our Contact Information</h2>
+          <p class="contact-description">
+            We're here to help and answer any questions you might have. We look
+            forward to hearing from you.
+          </p>
 
-              <div class="contact-methods">
-                <div class="contact-method">
-                  <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div class="contact-method-content">
-                    <h3>Head Office</h3>
-                    <p>P.O. Box 31952, Al Khobar 31952, Saudi Arabia</p>
-                  </div>
-                </div>
-
-                <div class="contact-method">
-                  <div class="contact-icon">
-                    <i class="fas fa-phone-alt"></i>
-                  </div>
-                  <div class="contact-method-content">
-                    <h3>Phone</h3>
-                    <p>+966 13 344 0244</p>
-                    <p>+966 13 344 0245</p>
-                  </div>
-                </div>
-
-                <div class="contact-method">
-                  <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div class="contact-method-content">
-                    <h3>Email</h3>
-                    <p>info@ikhgroups.com</p>
-                    <p>sales@ikhgroups.com</p>
-                  </div>
-                </div>
-
-                <div class="contact-method">
-                  <div class="contact-icon">
-                    <i class="fas fa-clock"></i>
-                  </div>
-                  <div class="contact-method-content">
-                    <h3>Working Hours</h3>
-                    <p>Sunday - Thursday: 8:00 AM - 5:00 PM</p>
-                    <p>Friday - Saturday: Closed</p>
-                  </div>
-                </div>
+          <div class="contact-methods-grid">
+            <!-- Head Office -->
+            <div class="contact-method-card">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-method-content">
+                <h3>Head Office</h3>
+                <p>King Saud Street, Near PANDA & Al Khanani Building</p>
+                <p>Ar. Rabi, Dammam - 32254</p>
+                <p>Phone: +966 13 823 7014</p>
+                <p>Kingdom of Saudi Arabia</p>
+                <p>Email: info@ikhgroups.com</p>
+                <p>sales@cacgroups.com</p>
               </div>
             </div>
 
-            <div class="contact-form-container">
-              <h2 class="section-title">Send Us a Message</h2>
-              <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Your Name"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="Your Email"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Phone Number"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    placeholder="Subject"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                    placeholder="Your Message"
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="button button-primary">
-                  Send Message <i class="fas fa-paper-plane"></i>
-                </button>
-              </form>
+            <!-- Branch Office -->
+            <div class="contact-method-card">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-method-content">
+                <h3>Branch Office</h3>
+                <p>Al-Jubail, Near Dawah Center</p>
+                <p>Jubail - 31961</p>
+                <p>Kingdom of Saudi Arabia</p>
+                <p>Email: info@ikhgroups.com</p>
+                <p>cac@cacgroups.com</p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+
+        <div class="contact-form-section">
+          <h2 class="section-title">Send Us a Message</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your Name"
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Your Email"
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone Number"
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                placeholder="Subject"
+              />
+            </div>
+
+            <div class="form-group">
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Your Message"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="button button-primary">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
 
       <!-- Map Section -->
       <section class="map-section">
