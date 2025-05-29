@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHE Management - IKH Groups</title>
+    <meta
+      name="description"
+      content="IKH Groups' commitment to health, safety, and environmental management in construction projects"
+    />
+    <link rel="icon" type="image/x-icon" href="title_logo.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/IKH/style.css" />
+    <style>
+      /* Hero Section */
+      .she-hero {
+        position: relative;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+            no-repeat center center/cover;
+        padding: 180px 0 120px;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        min-height: 20vh;
+      }
+
+      .she-hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .she-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        font-family: "Poppins", sans-serif;
+        color: var(--white);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .she-hero p {
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        max-width: 800px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        color: var(--white);
+      }
+
+      /* Content Section */
+      .she-content-section {
+        padding: 6rem 0;
+        background-color: #fff;
+        position: relative;
+      }
+
+      .she-content-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDgsMjQ4LDI0OCwxKSI+PC9yZWN0PjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwxKSIgeD0iMjAiIHk9IjAiPjwvcmVjdD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiIG9wYWNpdHk9IjAuMDIiPjwvcmVjdD48L3N2Zz4=");
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      .she-container {
+        position: relative;
+        z-index: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        color: var(--primary);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 1rem;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+
+      .she-content {
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .she-content h3 {
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .she-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-medium);
+        margin-bottom: 1.5rem;
+      }
+
+      .she-list {
+        margin: 2rem 0;
+        padding-left: 1.5rem;
+      }
+
+      .she-list li {
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 1.5rem;
+        line-height: 1.6;
+        color: var(--text-medium);
+      }
+
+      .she-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary);
+        border-radius: 50%;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .she-hero {
+          padding: 120px 0 80px;
+          min-height: 60vh;
+        }
+
+        .she-content-section {
+          padding: 4rem 0;
+        }
+
+        .she-content {
+          padding: 2rem;
+        }
+      }
+
+      /* Animation classes */
+      .animate-on-scroll {
+        opacity: 0;
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .animate-on-scroll.visible {
+        opacity: 1;
+      }
+
+      .slide-up {
+        transform: translateY(30px);
+      }
+
+      .slide-up.visible {
+        transform: translateY(0);
+      }
+
+      .slide-left {
+        transform: translateX(-30px);
+      }
+
+      .slide-left.visible {
+        transform: translateX(0);
+      }
+
+      .slide-right {
+        transform: translateX(30px);
+      }
+
+      .slide-right.visible {
+        transform: translateX(0);
+      }
+
+      /* Floating animation for hero text */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="she-hero">
+        <div class="container floating">
+          <h1 class="animate__animated animate__fadeInDown">
+            SHE Management
+          </h1>
+          <p class="animate__animated animate__fadeInUp">
+            At IKH Groups, we prioritize Safety, Health, and Environmental standards to ensure sustainable and responsible construction practices.
+          </p>
+        </div>
+      </section>
+
+      <!-- Content Section -->
+      <section class="she-content-section">
+        <div class="she-container">
+          <div class="section-title">
+            <h2>Our SHE Commitment</h2>
+          </div>
+          <div class="she-content animate-on-scroll slide-up">
+            <p>
+              The company recognizes that high standards of health, safety and welfare are an integral element of efficient business management objectives and contributes to the operational efficiency and profitability of the company. Health & Safety is a management responsibility of equal importance to production and quality. It is IKHGROUPS Policy to comply with the requirements of the Health & Safety at work. Equally, it is recognized that employees have a duty of care to themselves and others by avoiding hazards, preventing accidents and co-operating with the Company by complying with all instructions and recommendations on health and safety if the aims and objectives of this policy are to be achieved.
+            </p>
+
+            <h3>Health & Safety Policy</h3>
+            <p>
+              IKHGROUPS pays every importance to good health, safety performance at all areas of operations to achieve business objectives. Management is committed to take an integrated approach where managing health and safety forms as a part of the overall business strategy, protection of human resources, properties, environment and the same commitment will be demonstrated by all levels of supervision in the organization. Vigorous efforts will extend prevention of accident in all possible ways and implications. We consider the same as an important element in our construction process and are the direct responsibility of our Projects Management Team. IKHGROUPS assures that projects will be carried out with high degree of safety to attain this objective. Our projects management will strive to provide a safe and healthy environment that is free from recognized potential hazards and will maintain its facilities and equipment at maximum safe operating standards.
+            </p>
+
+            <h3>Occupational Health and Safety Objectives</h3>
+            <ul class="she-list">
+              <li>To comply with relevant national and international laws.</li>
+              <li>To reduce occupational health and safety hazards.</li>
+              <li>To control the negative effects of the Occupational health and safety issues or risks.</li>
+              <li>To assess / improve the Occupational health and safety performance.</li>
+              <li>To be prepared for emergency situations and to intervene immediately.</li>
+              <li>To train and inform all employees about occupational health and safety issues.</li>
+            </ul>
+
+            <h3>Environment Policy</h3>
+            <p>
+              It is the policy of IKHGROUPS to operate its business and carry out its activities in a way that recognizes its responsibilities to and for the environment. The company is committed to pursuing the best environmental practices however and whenever practicable. Each operating business unit is committed to meet the objective of this policy.
+            </p>
+
+            <p>In particular we will:</p>
+            <ul class="she-list">
+              <li>Include environment issues as a matter of report of board of directors.</li>
+              <li>Ensure that adequate human and financial resources are made available within operating units to implement and maintain the policy</li>
+              <li>Include environmental considerations in our business planning and decision making.</li>
+              <li>Comply with all applicable regulations and statutory requirements as appropriate where no regulations exist set our own standards.</li>
+              <li>Train all employees in environmental matters appropriate to their role.</li>
+            </ul>
+
+            <h3>Environment Objectives:</h3>
+            <ul class="she-list">
+              <li>To make environmentally sensitive buildings.</li>
+              <li>To prevent environmental pollution.</li>
+              <li>To ensure effective use of nonrenewable natural resources and to help recovery and re-use.</li>
+              <li>To comply with national and international laws.</li>
+              <li>To be prepared for emergency situations and to intervene immediately.</li>
+              <li>To train and inform all employees about environmental issues.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="/IKH/index.js"></script>
+    <script>
+      // Simple scroll animation trigger
+      document.addEventListener("DOMContentLoaded", function () {
+        const animateElements = document.querySelectorAll(".animate-on-scroll");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        animateElements.forEach((element) => {
+          observer.observe(element);
+        });
+      });
+    </script>
+  </body>
+</html>
