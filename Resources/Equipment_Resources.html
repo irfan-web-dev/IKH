@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equipment Resources - IKH Groups</title>
+    <meta
+      name="description"
+      content="IKH Groups' comprehensive equipment resources for construction projects"
+    />
+    <link rel="icon" type="image/x-icon" href="title_logo.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      /* Hero Section */
+      .equipment-hero {
+        position: relative;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1584192436700-b7edfb0ea88f?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+            no-repeat center center/cover;
+        padding: 180px 0 120px;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        min-height: 20vh;
+      }
+
+      .equipment-hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .equipment-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        font-family: "Poppins", sans-serif;
+        color: var(--white);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .equipment-hero p {
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        max-width: 800px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        color: var(--white);
+      }
+
+      /* Equipment Table Section */
+      .equipment-section {
+        padding: 6rem 0;
+        background-color: #fff;
+        position: relative;
+      }
+
+      .equipment-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDgsMjQ4LDI0OCwxKSI+PC9yZWN0PjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwxKSIgeD0iMjAiIHk9IjAiPjwvcmVjdD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiIG9wYWNpdHk9IjAuMDIiPjwvcmVjdD48L3N2Zz4=");
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      .equipment-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        color: var(--primary);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 1rem;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+
+       .equipment-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 3rem auto 0;
+        max-width: 1000px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .equipment-table table {
+        width: 100%;
+        min-width: 600px; /* Minimum width before scrolling kicks in */
+      }
+
+      .equipment-table:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.2);
+      }
+
+      .equipment-table thead {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .equipment-table th {
+        padding: 18px 15px;
+        text-align: left;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 15px;
+      }
+
+      .equipment-table tbody tr {
+        border-bottom: 1px solid #e0e0e0;
+        transition: all 0.3s ease;
+      }
+
+      .equipment-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      .equipment-table tbody tr:hover {
+        background-color: rgba(249, 115, 22, 0.05);
+      }
+
+      .equipment-table td {
+        padding: 15px;
+        font-size: 15px;
+        color: var(--text-medium);
+        word-break: break-word;
+      }
+
+      .equipment-table td:first-child {
+        font-weight: 500;
+        color: var(--text-dark);
+      }
+
+     /* Responsive table */
+      @media (max-width: 768px) {
+        .equipment-hero {
+          padding: 120px 0 80px;
+          min-height: 60vh;
+        }
+
+        .equipment-section {
+          padding: 4rem 0;
+        }
+
+        .equipment-table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch; 
+        }
+        
+        .equipment-table table {
+          white-space: normal; 
+        }
+        
+        .equipment-table td, 
+        .equipment-table th {
+          white-space: normal; 
+          min-width: 120px; 
+        }
+      }
+
+      /* Animation classes */
+      .animate-on-scroll {
+        opacity: 0;
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .animate-on-scroll.visible {
+        opacity: 1;
+      }
+
+      .slide-up {
+        transform: translateY(30px);
+      }
+
+      .slide-up.visible {
+        transform: translateY(0);
+      }
+
+      /* Floating animation for hero text */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="equipment-hero">
+        <div class="container floating">
+          <h1 class="animate__animated animate__fadeInDown">
+            Equipment Resources
+          </h1>
+          <p class="animate__animated animate__fadeInUp">
+            Our state-of-the-art construction equipment and machinery ensure
+            efficiency, precision, and timely completion of all projects, big or
+            small.
+          </p>
+        </div>
+      </section>
+
+      <!-- Equipment Table Section -->
+      <section class="equipment-section">
+        <div class="container equipment-container">
+          <div class="section-title">
+            <h2>Our Equipment Inventory</h2>
+          </div>
+          <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem">
+            We maintain a comprehensive fleet of modern construction equipment
+            to meet all project requirements.
+          </p>
+
+          <div class="equipment-table animate-on-scroll slide-up">
+            <table>
+              <thead>
+                <tr>
+                  <th>Equipment Type</th>
+                  <th>Manufacturer</th>
+                  <th>Quantity</th>
+                  <th>Capacity/Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Crane</td>
+                  <td>TADANO/XCMG/SANY</td>
+                  <td>2</td>
+                  <td>100 Ton</td>
+                </tr>
+                <tr>
+                  <td>Crane</td>
+                  <td>TADANO/XCMG/SANY</td>
+                  <td>5</td>
+                  <td>100 Ton</td>
+                </tr>
+                <tr>
+                  <td>Crane</td>
+                  <td>TADANO/XCMG/SANY</td>
+                  <td>2</td>
+                  <td>100 Ton</td>
+                </tr>
+                <tr>
+                  <td>Boom Truck</td>
+                  <td>GROVE/TADANO</td>
+                  <td>3</td>
+                  <td>GROVE/TADANO</td>
+                </tr>
+                <tr>
+                  <td>Man Lift</td>
+                  <td>JLG</td>
+                  <td>2</td>
+                  <td>20-40</td>
+                </tr>
+                <tr>
+                  <td>Fork Lift</td>
+                  <td>CLARCK/CAT</td>
+                  <td>3</td>
+                  <td>3-12 Ton</td>
+                </tr>
+                <tr>
+                  <td>Trailer</td>
+                  <td>MERCIDEES</td>
+                  <td>4</td>
+                  <td>MERCIDEES</td>
+                </tr>
+                <tr>
+                  <td>Mini Truck</td>
+                  <td>DEIHATSU/IZUZU</td>
+                  <td>3</td>
+                  <td>DEIHATSU/IZUZU</td>
+                </tr>
+                <tr>
+                  <td>Welding Machine</td>
+                  <td>MILLER/RHINO/LINCOLN</td>
+                  <td>26</td>
+                  <td>MILLER/RHINO/LINCOLN</td>
+                </tr>
+                <tr>
+                  <td>Generator</td>
+                  <td>WILKINSON/KIRLOSKAR</td>
+                  <td>3</td>
+                  <td>120-300</td>
+                </tr>
+                <tr>
+                  <td>Grinding Machine</td>
+                  <td>DEWALT/MAKITA</td>
+                  <td>28</td>
+                  <td>DEWALT/MAKITA</td>
+                </tr>
+                <tr>
+                  <td>Drilling Machine</td>
+                  <td>DEWALT/MAKITA</td>
+                  <td>12</td>
+                  <td>DEWALT/MAKITA</td>
+                </tr>
+                <tr>
+                  <td>Threading Machine</td>
+                  <td>Electric & Manual, w/Die Set</td>
+                  <td>3</td>
+                  <td>Electric & Manual, w/Die Set</td>
+                </tr>
+                <tr>
+                  <td>Chain Block</td>
+                  <td>Toyo</td>
+                  <td>20</td>
+                  <td>2-20 T</td>
+                </tr>
+                <tr>
+                  <td>Bus</td>
+                  <td>International/Leyland</td>
+                  <td>3</td>
+                  <td>50 Seater</td>
+                </tr>
+                <tr>
+                  <td>Mini Bus</td>
+                  <td>Toyota/Nissan</td>
+                  <td>2</td>
+                  <td>30 Seater</td>
+                </tr>
+                <tr>
+                  <td>Mini Bus</td>
+                  <td>Nissan/Toyota</td>
+                  <td>2</td>
+                  <td>20 seater</td>
+                </tr>
+                <tr>
+                  <td>Pick Ups</td>
+                  <td>Nissan/Toyota/Mitsubishi</td>
+                  <td>5</td>
+                  <td>Nissan/Toyota/Mitsubishi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+    <script>
+      // Simple scroll animation trigger
+      document.addEventListener("DOMContentLoaded", function () {
+        const animateElements = document.querySelectorAll(".animate-on-scroll");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        animateElements.forEach((element) => {
+          observer.observe(element);
+        });
+      });
+    </script>
+  </body>
+</html>
