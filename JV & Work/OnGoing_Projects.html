@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ongoing Projects - IKH Groups</title>
+    <meta
+      name="description"
+      content="IKH Groups' current and upcoming projects"
+    />
+    <link rel="icon" type="image/x-icon" href="title_logo.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/IKH/style.css" />
+    <style>
+      .projects-table-container {
+        overflow-x: auto;
+        margin-top: 40px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .projects-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+
+      .projects-table th {
+        background-color: var(--primary);
+        color: white;
+        padding: 15px;
+        text-align: left;
+      }
+
+      .projects-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .projects-table tr:hover {
+        background-color: #f1f5ff;
+      }
+
+      .status-badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 768px) {
+        .projects-table {
+          font-size: 0.85rem;
+        }
+
+        .projects-table th,
+        .projects-table td {
+          padding: 8px 10px;
+        }
+      }
+
+      /* Status Badges */
+      .status-badge.upcoming {
+        background-color: #fff8e6;
+        color: #ff8f00;
+      }
+
+      /* Projects Table Specific Styles */
+      .projects-table th:nth-child(4),
+      .projects-table td:nth-child(4) {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section-template">
+        <div class="container hero-container">
+          <div class="hero-text-content floating">
+            <h1 class="animate__animated animate__fadeInDown">
+              Ongoing Projects
+            </h1>
+            <p class="animate__animated animate__fadeInUp">
+              Our current and upcoming projects showcasing our continuous growth
+            </p>
+          </div>
+
+          <dotlottie-player
+            src="https://lottie.host/bd546e6b-6763-459e-a132-e3c68ad51b44/NsegJVScne.lottie"
+            background="transparent"
+            speed="1"
+            style="width: 500px; height: 300px"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+      </section>
+
+      <!-- Content Section -->
+      <section class="content-section-template">
+        <div class="content-container-template">
+          <div class="section-title-template">
+            <h2>Our Current Projects</h2>
+          </div>
+          <div class="projects-table-container animate-on-scroll slide-up">
+            <table class="projects-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Project Name</th>
+                  <th>Company Name</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>RAS TANURA</td>
+                  <td>TECNICAS REUNIDAS ( TR )</td>
+                  <td><span class="status-badge upcoming">UPCOMING</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>WAAD AL SHAMAL</td>
+                  <td>SNC-LAVALIN</td>
+                  <td><span class="status-badge upcoming">UPCOMING</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>PETRO RABIGH</td>
+                  <td>ABENGOA SA</td>
+                  <td><span class="status-badge upcoming">UPCOMING</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>SYABA 3 IWPP</td>
+                  <td>HANCHANG</td>
+                  <td><span class="status-badge upcoming">UPCOMING</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="/IKH/index.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </body>
+</html>

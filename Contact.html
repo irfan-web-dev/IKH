@@ -25,124 +25,6 @@
     />
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Hero Section */
-      .contact-hero-section {
-        position: relative;
-        height: 90vh;
-        min-height: 600px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--white);
-        overflow: hidden;
-      }
-
-      .contact-hero-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("commercial_project.jpg") no-repeat center center;
-        background-size: cover;
-        z-index: 0;
-        animation: subtleZoom 20s infinite alternate;
-      }
-
-      @keyframes subtleZoom {
-        0% {
-          transform: scale(1);
-        }
-        100% {
-          transform: scale(1.05);
-        }
-      }
-
-      .contact-hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.9) 0%,
-          rgba(15, 23, 42, 0.6) 100%
-        );
-        z-index: 1;
-      }
-
-      .contact-hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 800px;
-        padding: 0 20px;
-      }
-
-      .contact-hero-title {
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        color: var(--white);
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        line-height: 1.2;
-      }
-
-      .contact-hero-text {
-        font-size: clamp(1rem, 2vw, 1.5rem);
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 2.5rem;
-        line-height: 1.6;
-      }
-
-      .hero-scroll-indicator {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        animation: bounce 2s infinite;
-      }
-
-      .hero-scroll-down {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        animation: bounce 2s infinite;
-      }
-
-      .hero-scroll-down i {
-        font-size: 2rem;
-        color: var(--white);
-        background: var(--primary);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateY(0) translateX(-50%);
-        }
-        40% {
-          transform: translateY(-20px) translateX(-50%);
-        }
-        60% {
-          transform: translateY(-10px) translateX(-50%);
-        }
-      }
-
       /* Contact Content Section */
       .contact-container {
         display: flex;
@@ -166,24 +48,6 @@
       .contact-form-section:hover {
         transform: translateY(-5px);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      }
-
-      .button {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background-color: var(--primary);
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .button:hover {
-        background-color: var(--primary-dark);
       }
 
       .contact-form-section button {
@@ -341,22 +205,9 @@
         .contact-form-section {
           flex: 1;
         }
-
-        .contact-hero-title {
-          font-size: clamp(3rem, 5vw, 5rem);
-        }
       }
 
       @media (max-width: 767px) {
-        .contact-hero-section {
-          height: 80vh;
-          min-height: 500px;
-        }
-
-        .contact-hero-title {
-          font-size: 2.5rem;
-        }
-
         .contact-method-card {
           padding: 1.25rem;
         }
@@ -366,36 +217,39 @@
   <body>
     <!-- Main Content -->
     <main class="main-content">
-      <!-- Enhanced Hero Section -->
-      <section class="contact-hero-section" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
-        <div class="contact-hero-bg"></div>
-        <div class="hero-overlay"></div>
-
-        <div class="contact-hero-content">
-          <h1 class="contact-hero-title animate__animated animate__fadeInDown">
-            Contact Us
-          </h1>
-          <p class="contact-hero-text animate__animated animate__fadeInUp">
-            Get in touch with our team for inquiries, quotes, or any questions
-            you may have about your construction projects.
-          </p>
-          <a
+      <!-- Hero Section -->
+      <section class="hero-section-template">
+        <div class="container hero-container">
+          <div class="hero-text-content floating">
+            <h1 class="animate__animated animate__fadeInDown">Contact Us</h1>
+            <p class="animate__animated animate__fadeInUp">
+              Get in touch with our team for inquiries, quotes, or any questions
+              you may have about your construction projects.
+            </p>
+             <a
             href="#contactForm"
             class="button button-primary animate__animated animate__pulse animate__infinite"
           >
             Send Message <i class="fas fa-paper-plane"></i>
           </a>
-        </div>
-
-        <div class="hero-scroll-down">
-          <i class="fas fa-chevron-down"></i>
+          </div>
+          
+          <dotlottie-player
+            src="https://lottie.host/f3f39cf3-a512-49a9-9094-5e33f5e99654/8H97tqqugD.lottie"
+            background="transparent"
+            speed="1"
+            style="width: 400px; height: 400px"
+            loop
+            autoplay
+          ></dotlottie-player>
+         
         </div>
       </section>
 
       <!-- Contact Section -->
       <div class="contact-container">
         <div class="contact-info-section">
-          <h2 class="section-title">Our Contact Information</h2>
+          <h2 class="contact-section-title">Our Contact Information</h2>
           <p class="contact-description">
             We're here to help and answer any questions you might have. We look
             forward to hearing from you.
@@ -436,7 +290,7 @@
         </div>
 
         <div class="contact-form-section">
-          <h2 class="section-title">Send Us a Message</h2>
+          <h2 class="contact-section-title">Send Us a Message</h2>
           <form class="contact-form" id="contactForm">
             <div class="form-group">
               <input
@@ -515,6 +369,10 @@
 
     <!-- JavaScript -->
     <script src="index.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
     <script>
       // Contact form submission
       document

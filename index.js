@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const animateElements = document.querySelectorAll(".animate-on-scroll");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  animateElements.forEach((element) => {
+    observer.observe(element);
+  });
+
   //search button Header
   const searchIcon = document.getElementById("search-icon");
   const searchContainer = document.querySelector(".search-button");
@@ -130,25 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     { threshold: 0.6 }
   );
-
-  const animateElements = document.querySelectorAll(".animate-on-scroll");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
-  );
-
-  animateElements.forEach((element) => {
-    observer.observe(element);
-  });
 
   const statGrid = document.querySelector(".stats-grid");
   if (statGrid) statObserver.observe(statGrid);

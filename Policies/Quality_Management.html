@@ -31,15 +31,25 @@
     <main class="main-content">
       <!-- Hero Section -->
       <section class="hero-section-template">
-        <div class="container floating">
-          <h1 class="animate__animated animate__fadeInDown">
-            Quality Management
-          </h1>
-          <p class="animate__animated animate__fadeInUp">
-            At IKH Groups, we are committed to delivering construction projects
-            of the highest quality through rigorous quality management systems
-            and processes.
-          </p>
+        <div class="container hero-container">
+          <div class="hero-text-content floating">
+            <h1 class="animate__animated animate__fadeInDown">
+              Quality Management
+            </h1>
+            <p class="animate__animated animate__fadeInUp">
+              At IKH Groups, we are committed to delivering construction
+              projects of the highest quality through rigorous quality
+              management systems and processes.
+            </p>
+          </div>
+          <dotlottie-player
+              src="https://lottie.host/e213f05b-bdd5-4c48-87f7-65055181c883/xTxDglfvzS.lottie"
+              background="transparent"
+              speed="1"
+              style="width: 500px; height: 300px"
+              loop
+              autoplay
+            ></dotlottie-player>
         </div>
       </section>
 
@@ -164,5 +174,10 @@
 
     <!-- JavaScript -->
     <script src="/IKH/index.js"></script>
+    <!-- Add this before the closing body tag -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
   </body>
 </html>

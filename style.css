@@ -1156,6 +1156,7 @@ ul {
 
 /* Client Slider */
 .clients-section {
+  padding: 80px 0;
   background-color: var(--gray-light);
   position: relative;
   overflow: hidden;
@@ -1176,16 +1177,16 @@ ul {
 }
 
 .client-slider {
-  position: relative;
+  width: 100%;
   overflow: hidden;
-  padding: 20px 0;
-  z-index: 1;
+  position: relative;
+  margin: 40px 0;
 }
 
 .client-track {
   display: flex;
   gap: 40px;
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .client-item {
@@ -1225,7 +1226,7 @@ ul {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-220px * 8 - 40px * 8));
+    transform: translateX(calc(-720px * 8 - 40px * 8));
   }
 }
 
@@ -1679,13 +1680,15 @@ ul {
 /* Common Template Styles - Jo HTML files mein common the */
 .hero-section-template {
   position: relative;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 30%, #c2410c 70%, #9a3412 100%);
-  padding: 180px 0 120px;
-  text-align: center;
+  background: #fc4a1a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fc4a1a, #f7b733); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 100px 0; /* Reduced padding from 180px 0 120px */
+  text-align: left; /* Changed from center to left */
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: 20vh;
+  min-height: 400px; /* Set a fixed min-height instead of 20vh */
 }
 
 .hero-section-template .container {
@@ -1876,3 +1879,110 @@ ul {
     padding: 2rem;
   }
 }
+
+
+
+/* New Hero Section Styles */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text-content {
+  flex: 1;
+  text-align: left;
+  padding-right: 40px;
+  max-width: 600px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+  }
+  
+  .hero-text-content {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  
+  .hero-animation {
+    max-width: 100%;
+     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section-template {
+    min-height: auto;
+    padding: 80px 0 60px; 
+  }
+  
+  .hero-text-content h1 {
+    font-size: 2.2rem; 
+    margin-bottom: 1rem;
+  }
+  
+  .hero-text-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  dotlottie-player {
+    width: 100% !important;
+    height: 200px !important;
+  }
+}
+
+/* completed , ongoing project css */
+      .projects-table-container {
+        overflow-x: auto;
+        margin-top: 40px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .projects-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+
+      .projects-table th {
+        background-color: var(--primary);
+        color: white;
+        padding: 15px;
+        text-align: left;
+      }
+
+      .projects-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .projects-table tr:hover {
+        background-color: #f1f5ff;
+      }
+
+      .status-badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 768px) {
+        .projects-table {
+          font-size: 0.85rem;
+        }
+
+        .projects-table th,
+        .projects-table td {
+          padding: 8px 10px;
+        }
+      }
