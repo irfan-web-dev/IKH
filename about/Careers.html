@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers - IKH Groups</title>
+    <meta
+      name="description"
+      content="Explore career opportunities at IKH Groups"
+    />
+    <link rel="icon" type="image/x-icon" href="/title_logo.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/IKH/style.css" />
+    <style>
+      .career-form {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 30px;
+        background: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .career-form h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .career-form form {
+        max-width: 500px;
+        margin: 60px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .career-form label {
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #444;
+      }
+
+      .career-form input,
+      .career-form textarea {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .career-form button {
+        padding: 12px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .career-form button:hover {
+        background-color: var(--primary-dark);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section-template">
+        <div class="container hero-container">
+          <div class="hero-text-content floating">
+            <h1 class="animate__animated animate__zoomInDown">Careers</h1>
+            <p class="animate__animated animate__fadeInUp">
+              Be a part of our growing journey
+            </p>
+          </div>
+
+          <dotlottie-player
+            src="https://lottie.host/ecb1af8f-b3ac-4ee4-8f9e-c01d5c64cfdc/bJnHzIbgWC.lottie"
+            background="transparent"
+            speed="1"
+            style="width: 500px; height: 300px"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+      </section>
+
+      <!-- Form Section -->
+      <section class="content-section-template">
+        <div class="content-container-template">
+          <section class="career-form">
+            <h2>Join Our Team</h2>
+            <form>
+              <input type="text" placeholder="Your Name " required />
+              <input type="email" placeholder="Email " required />
+              <input type="text" placeholder="Subject " required />
+              <textarea
+                placeholder="Your Message "
+                rows="5"
+                required
+              ></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="/IKH/index.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </body>
+</html>
