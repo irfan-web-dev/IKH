@@ -1185,7 +1185,7 @@ ul {
 .client-track {
   display: flex;
   gap: 40px;
-  animation: marquee 40s linear infinite;
+  animation: marquee 100s linear infinite;
 }
 
 .client-item {
@@ -1225,7 +1225,7 @@ ul {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-920px * 9 - 70px * 9));
+    transform: translateX(calc(-220px * 39 - 40px * 39));
   }
 }
 
